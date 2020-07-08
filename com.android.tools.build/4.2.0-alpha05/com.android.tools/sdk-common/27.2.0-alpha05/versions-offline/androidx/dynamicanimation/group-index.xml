@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.dynamicanimation>
+  <dynamicanimation versions="1.0.0,1.1.0-alpha03"/>
+  <dynamicanimation-ktx versions="1.0.0-alpha03"/>
+</androidx.dynamicanimation>
+

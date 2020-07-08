@@ -1,0 +1,92 @@
+<!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!--
+  Customizations for repo-common. Specified here rather than inline since xjc doesn't like
+  customizations on imported schemas.
+-->
+<bindings version="2.1"
+          xmlns="http://java.sun.com/xml/ns/jaxb"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+          xmlns:plugin="http://schemas.android.com/android/jaxb/plugin/1"
+          extensionBindingPrefixes="plugin">
+    <bindings schemaLocation="../../api/repo-common-01.xsd" node="/xsd:schema">
+        <!-- unfortunately we can't use scd refs with custom plugins: JAXB-1047 -->
+        <bindings node="//xsd:complexType[@name='channelRefType']">
+            <bindings node="xsd:attribute[@name='ref']">
+                <property>
+                    <baseType name="com.android.repository.impl.generated.v1.ChannelType"/>
+                </property>
+            </bindings>
+            <plugin:super name="com.android.repository.impl.meta.RemotePackageImpl$ChannelRef"/>
+
+        </bindings>
+        <bindings node="//xsd:complexType[@name='licenseRefType']">
+            <bindings node="xsd:attribute[@name='ref']">
+                <property>
+                    <baseType name="com.android.repository.impl.generated.v1.LicenseType"/>
+                </property>
+            </bindings>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='channelType']">
+            <plugin:super name="com.android.repository.api.Channel"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='repositoryType']">
+            <plugin:super name="com.android.repository.api.Repository"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='localPackage']">
+            <plugin:super name="com.android.repository.impl.meta.LocalPackageImpl"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='dependenciesType']">
+            <plugin:super name="com.android.repository.impl.meta.RepoPackageImpl$Dependencies"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='remotePackage']">
+            <plugin:super name="com.android.repository.impl.meta.RemotePackageImpl"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='archivesType']">
+            <plugin:super name="com.android.repository.impl.meta.RepoPackageImpl$Archives"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='licenseRefType']">
+            <plugin:super name="com.android.repository.impl.meta.RepoPackageImpl$UsesLicense"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='typeDetails']">
+            <plugin:super name="com.android.repository.impl.meta.TypeDetails"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='dependencyType']">
+            <plugin:super name="com.android.repository.api.Dependency"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='licenseType']">
+            <plugin:super name="com.android.repository.api.License"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='archiveType']">
+            <plugin:super name="com.android.repository.impl.meta.Archive"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='patchesType']">
+            <plugin:super name="com.android.repository.impl.meta.Archive$PatchesType"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='completeType']">
+            <plugin:super name="com.android.repository.impl.meta.Archive$CompleteType"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='patchType']">
+            <plugin:super name="com.android.repository.impl.meta.Archive$PatchType"/>
+        </bindings>
+        <bindings node="//xsd:complexType[@name='revisionType']">
+            <plugin:super name="com.android.repository.impl.meta.RevisionType"/>
+        </bindings>
+
+    </bindings>
+</bindings>

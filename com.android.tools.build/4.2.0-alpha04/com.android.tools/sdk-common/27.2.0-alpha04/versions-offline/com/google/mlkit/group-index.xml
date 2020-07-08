@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.google.mlkit>
+  <image-labeling-common versions="16.0.0"/>
+  <object-detection-custom versions="16.0.0"/>
+  <object-detection-common versions="16.0.0"/>
+  <linkfirebase versions="16.0.0"/>
+  <image-labeling versions="16.0.0"/>
+  <image-labeling-custom versions="16.0.0"/>
+  <smart-reply versions="16.0.0"/>
+  <language-id versions="16.0.0"/>
+  <face-detection versions="16.0.0"/>
+  <image-labeling-automl versions="16.0.0"/>
+  <common versions="16.0.0"/>
+  <vision-internal-vkp versions="16.0.0"/>
+  <translate versions="16.0.0"/>
+  <barcode-scanning versions="16.0.0"/>
+  <object-detection versions="16.0.0"/>
+  <vision-common versions="16.0.0"/>
+</com.google.mlkit>
+

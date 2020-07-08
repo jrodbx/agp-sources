@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.google.ar.sceneform>
+  <filament-android versions="1.17.1"/>
+  <core versions="1.17.1"/>
+  <rendering versions="1.17.1"/>
+  <plugin versions="1.17.1"/>
+  <sceneform-base versions="1.17.1"/>
+  <assets versions="1.17.1"/>
+  <animation versions="1.17.1"/>
+</com.google.ar.sceneform>
+

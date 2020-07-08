@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.test.platform>
+  <android-device-controller-adb versions="0.0.4-dev"/>
+  <android-device-provider-local versions="0.0.4-dev"/>
+  <android-driver-instrumentation versions="0.0.4-dev"/>
+  <android-test-plugin versions="0.0.4-dev"/>
+  <android-test-plugin-host-retention versions="0.0.4-dev"/>
+  <core versions="0.0.4-dev"/>
+  <core-proto versions="0.0.4-dev"/>
+  <launcher versions="0.0.4-dev"/>
+</com.google.test.platform>
+

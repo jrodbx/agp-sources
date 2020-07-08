@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.paging>
+  <paging-common versions="2.1.0"/>
+  <paging-runtime versions="2.1.0"/>
+  <paging-rxjava2 versions="2.1.0"/>
+  <paging-runtime-ktx versions="2.1.0"/>
+  <paging-rxjava2-ktx versions="2.1.0"/>
+  <paging-common-ktx versions="2.1.0"/>
+</androidx.paging>
+
