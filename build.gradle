@@ -1,0 +1,52 @@
+/**
+ * 1) Change agpVersion
+ * 2) Run './gradlew dumpSources'
+ * 3) Check changeset into source control
+ */
+def agpVersion = '4.0.0'
+
+repositories {
+  google()
+  jcenter()
+}
+
+configurations {
+  agp
+}
+
+dependencies {
+  agp "com.android.tools.build:gradle:${agpVersion}"
+}
+
+task dumpSources {
+  inputs.files configurations.agp
+  outputs.dir "com.android.tools.build/$agpVersion/"
+
+  doLast {
+    def componentIds = configurations.agp.incoming.resolutionResult.allDependencies
+        .findAll { it.selected.id.group.startsWith('com.android.tools') }
+        .collect { it.selected.id }
+        .toSet()
+    ArtifactResolutionResult result = dependencies.createArtifactResolutionQuery()
+        .forComponents(componentIds)
+        .withArtifacts(JvmLibrary, SourcesArtifact)
+        .execute()
+    result.resolvedComponents.each { ComponentArtifactsResult component ->
+      Set<ArtifactResult> sources = component.getArtifacts(SourcesArtifact)
+      sources.each { ArtifactResult ar ->
+        println "Found ${ar.file}."
+        if (ar instanceof ResolvedArtifactResult) {
+          def group = ar.id.componentIdentifier.group
+          def module = ar.id.componentIdentifier.module
+          def version = ar.id.componentIdentifier.version
+          println "Extracting to com.android.tools.build/$agpVersion/$group/$module/$version."
+          copy {
+            from zipTree(ar.file)
+            into file("com.android.tools.build/$agpVersion/$group/$module/$version")
+          }
+          println "Done extracting $module."
+        }
+      }
+    }
+  }
+}
