@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.test.uiautomator>
+  <uiautomator-v18 versions="2.2.0-alpha1"/>
+  <uiautomator versions="2.2.0"/>
+</androidx.test.uiautomator>
+

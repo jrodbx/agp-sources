@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2016 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!--
+    Extension to repo-common for addon repositories, containing the sdk-addon root element and
+    the addon and extra typedetails subclasses.
+
+    JAXB-usable classes can be generated from this schema as follows:
+    java com.sun.tools.internal.xjc.Driver \
+         -catalog <tools/base path>/repository/src/main/java/com/android/repository/api/catalog.xml \
+         -b <tools/base path>/repository/src/main/java/com/android/repository/api/common.xjb \
+         -b com/android/sdklib/repository/sdk-common.xjb \
+         -b repository/src/main/java/com/android/repository/api/global.xjb \
+         -p com.android.sdklib.repository.generated.addon.v1 \
+         com/android/sdklib/repository/sdk-addon-01.xsd \
+         -extension -Xandroid-inheritance -no-header
+
+    with tools.jar, jaxb-inheritance-plugin.jar, and the repository classes on the classpath.
+    Note that you can not use the xjc executable, as it does not support 3rd-party plugins.
+-->
+<xsd:schema
+        targetNamespace="http://schemas.android.com/sdk/android/repo/addon2/01"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:sdk="http://schemas.android.com/sdk/android/repo/addon2/01"
+        xmlns:common="http://schemas.android.com/repository/android/common/01"
+        xmlns:sdk-common="http://schemas.android.com/sdk/android/repo/common/01"
+        elementFormDefault="unqualified"
+        attributeFormDefault="unqualified"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns:plugin="http://schemas.android.com/android/jaxb/plugin/1"
+        jaxb:extensionBindingPrefixes="plugin"
+        version="1"
+        jaxb:version="2.0">
+
+    <xsd:import namespace="http://schemas.android.com/repository/android/common/01"/>
+    <xsd:import namespace="http://schemas.android.com/sdk/android/repo/common/01" schemaLocation="sdk-common-01.xsd"/>
+
+    <!-- The root element for addon repos -->
+    <xsd:element name="sdk-addon" type="common:repositoryType"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            Customization specifying the superclass of ObjectFactory.
+        </xsd:documentation>
+        <xsd:appinfo>
+            <plugin:super name="com.android.sdklib.repository.meta.AddonFactory"/>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+    <xsd:complexType name="addonDetailsType">
+        <xsd:annotation>
+            <xsd:documentation>
+                type-details subclass containing api level and vendor information.
+            </xsd:documentation>
+            <xsd:appinfo>
+                <plugin:super name="com.android.sdklib.repository.meta.DetailsTypes$AddonDetailsType"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="sdk-common:apiDetailsType">
+                <xsd:sequence>
+                    <xsd:element name="vendor" type="sdk-common:idDisplayType" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="tag" type="sdk-common:idDisplayType" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="default-skin" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="libraries" type="sdk:librariesType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="librariesType">
+        <xsd:annotation>
+            <xsd:documentation>
+                libraries provided by this addon
+            </xsd:documentation>
+            <xsd:appinfo>
+                <plugin:super name="com.android.sdklib.repository.meta.DetailsTypes$AddonDetailsType$Libraries"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="library" type="sdk-common:libraryType" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="extraDetailsType">
+        <xsd:annotation>
+            <xsd:documentation>
+                type-details subclass containing vendor information.
+            </xsd:documentation>
+            <xsd:appinfo>
+                <plugin:super name="com.android.sdklib.repository.meta.DetailsTypes$ExtraDetailsType"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="common:typeDetails">
+                <xsd:all>
+                    <xsd:element name="vendor" type="sdk-common:idDisplayType"/>
+                </xsd:all>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="mavenType">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <plugin:super name="com.android.sdklib.repository.meta.DetailsTypes$MavenType"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="common:typeDetails">
+                <xsd:all>
+                    <xsd:element name="vendor" type="sdk-common:idDisplayType"/>
+                </xsd:all>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>

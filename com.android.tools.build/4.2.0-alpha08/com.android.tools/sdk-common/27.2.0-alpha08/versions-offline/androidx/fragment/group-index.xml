@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.fragment>
+  <fragment versions="1.2.5,1.3.0-alpha07"/>
+  <fragment-ktx versions="1.2.5,1.3.0-alpha07"/>
+  <fragment-testing versions="1.2.5,1.3.0-alpha07"/>
+</androidx.fragment>
+

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.hilt>
+  <hilt-common versions="1.0.0-alpha02"/>
+  <hilt-compiler versions="1.0.0-alpha02"/>
+  <hilt-lifecycle-viewmodel versions="1.0.0-alpha02"/>
+  <hilt-work versions="1.0.0-alpha02"/>
+</androidx.hilt>
+
