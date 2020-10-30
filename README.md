@@ -12,3 +12,7 @@ To pull a new version:
 
 The `dumpSources` Gradle task will automatically download AGP and its transitive dependencies from 
 the Google repository and unzip them from your local Gradle cache directory.
+
+From there, use your favorite diff tool to easily examine changes across versions:
+
+![Diff example](/images/agp-diff.png)
