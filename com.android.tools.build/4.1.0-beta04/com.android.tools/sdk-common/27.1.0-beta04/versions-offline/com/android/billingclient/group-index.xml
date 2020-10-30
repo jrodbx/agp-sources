@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<com.android.billingclient>
-  <billing versions="2.2.0"/>
-  <billing-ktx versions="2.2.0"/>
-</com.android.billingclient>
-

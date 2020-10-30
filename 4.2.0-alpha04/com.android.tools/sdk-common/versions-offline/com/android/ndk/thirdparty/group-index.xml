@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.ndk.thirdparty>
+  <curl versions="7.69.1-alpha-1"/>
+  <jsoncpp versions="1.8.4-alpha-1"/>
+  <openssl versions="1.1.1d-alpha-1"/>
+</com.android.ndk.thirdparty>
+

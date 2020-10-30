@@ -1,2 +1,0 @@
-# Unrestrict from gradle-api approvers above as this is not API
-include /build-system/OWNERS

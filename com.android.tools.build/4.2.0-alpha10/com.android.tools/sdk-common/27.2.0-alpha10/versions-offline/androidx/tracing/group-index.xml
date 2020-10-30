@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<androidx.tracing>
-  <tracing versions="1.0.0-beta01"/>
-  <tracing-ktx versions="1.0.0-beta01"/>
-</androidx.tracing>
-

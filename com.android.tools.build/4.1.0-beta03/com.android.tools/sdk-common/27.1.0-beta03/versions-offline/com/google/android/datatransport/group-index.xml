@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<com.google.android.datatransport>
-  <transport-api versions="1.0.0,2.2.0"/>
-  <transport-backend-cct versions="1.0.0,2.2.1"/>
-  <transport-runtime versions="1.0.0,2.2.1"/>
-</com.google.android.datatransport>
-

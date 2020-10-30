@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<com.android.tools.external.com-intellij>
-  <intellij-core versions="26.6.3,27.0.0,27.2.0-alpha02"/>
-  <kotlin-compiler versions="26.6.3,27.0.0,27.2.0-alpha02"/>
-  <uast versions="171.4249.33"/>
-</com.android.tools.external.com-intellij>
-

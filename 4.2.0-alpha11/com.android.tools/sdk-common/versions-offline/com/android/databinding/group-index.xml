@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.databinding>
+  <adapters versions="3.6.4,4.0.1,4.2.0-alpha07"/>
+  <baseLibrary versions="3.6.4,4.0.1,4.2.0-alpha07"/>
+  <compiler versions="3.1.4,3.2.0-alpha10"/>
+  <compilerCommon versions="3.1.4,3.2.0-alpha10"/>
+  <library versions="3.6.4,4.0.1,4.2.0-alpha07"/>
+  <viewbinding versions="3.6.4,4.0.1,4.2.0-alpha07"/>
+  <viewbinding-support versions="3.6.0-alpha02"/>
+</com.android.databinding>
+
