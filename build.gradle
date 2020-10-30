@@ -20,7 +20,7 @@ dependencies {
 
 task dumpSources {
   inputs.files configurations.agp
-  outputs.dir "com.android.tools.build/$agpVersion/"
+  outputs.dir "$agpVersion/"
 
   doLast {
     def componentIds = configurations.agp.incoming.resolutionResult.allDependencies
@@ -39,10 +39,10 @@ task dumpSources {
           def group = ar.id.componentIdentifier.group
           def module = ar.id.componentIdentifier.module
           def version = ar.id.componentIdentifier.version
-          println "Extracting to com.android.tools.build/$agpVersion/$group/$module/$version."
+          println "Extracting to $agpVersion/$group/$module."
           copy {
             from zipTree(ar.file)
-            into file("com.android.tools.build/$agpVersion/$group/$module/$version")
+            into file("$agpVersion/$group/$module")
           }
           println "Done extracting $module."
         }
