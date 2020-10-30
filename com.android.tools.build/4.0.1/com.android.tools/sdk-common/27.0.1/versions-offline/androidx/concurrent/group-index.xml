@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<androidx.concurrent>
-  <futures versions="1.0.0-alpha01"/>
-  <concurrent-futures versions="1.0.0"/>
-  <concurrent-listenablefuture-callback versions="1.0.0-beta01"/>
-  <concurrent-listenablefuture versions="1.0.0-beta01"/>
-</androidx.concurrent>
-

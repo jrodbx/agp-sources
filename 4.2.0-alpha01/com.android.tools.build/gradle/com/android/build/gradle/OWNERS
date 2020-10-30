@@ -1,0 +1,2 @@
+# Restrict owners in this directory as it contains API implementations
+include /build-system/gradle-api/OWNERS

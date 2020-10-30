@@ -1,0 +1,3 @@
+# Unrestrict from gradle-api approvers above as this is not API
+set noparent
+include /build-system/OWNERS

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<android.arch.persistence.room>
+  <compiler versions="1.1.1"/>
+  <support-db-impl versions="1.0.0-alpha9"/>
+  <runtime versions="1.1.1"/>
+  <support-db versions="1.0.0-alpha9"/>
+  <migration versions="1.1.1"/>
+  <rxjava2 versions="1.1.1"/>
+  <testing versions="1.1.1"/>
+  <common versions="1.1.1"/>
+  <db versions="1.0.0-alpha9-1"/>
+  <db-impl versions="1.0.0-alpha9-1"/>
+  <guava versions="1.1.1"/>
+</android.arch.persistence.room>
+

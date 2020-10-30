@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!--
+    Schema for a list of repository sites that can be loaded by the repository framework
+    (specifically RemoteListSourceProviderImpl).
+    This schema can be extended to provide other siteTypes, potentially associated with different
+    RepositorySchemaModules.
+
+    JAXB-usable classes can be generated from this schema using the "xjc (common source list)"
+    run target in the tools/base IntelliJ project, or from the commandline as follows:
+    java com.sun.tools.xjc.Driver \
+         -episode repository/src/main/java/com/android/repository/api/list-common.xjb \
+         -p com.android.repository.impl.sources.generated.v1 \
+         repository/src/main/java/com/android/repository/api/repo-sites-common-1.xsd \
+         -extension -Xandroid-inheritance -d repository/src/main/java/ \
+         -b repository/src/main/java/com/android/repository/api/global.xjb \
+         -b repository/src/main/java/com/android/repository/impl/sources/repo-sites-common-custom.xjb \
+         -no-header
+
+    from tools/base with jaxb-inheritance-plugin.jar, repository classes, guava, and the
+    transitive dependencies of org.glassfish.jaxb:jaxb-xjc:17.0 on the classpath.
+
+    Note that you cannot use the xjc executable, as it does not support 3rd-party plugins.
+
+-->
+
+<xsd:schema
+    targetNamespace="http://schemas.android.com/repository/android/sites-common/1"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:sl="http://schemas.android.com/repository/android/sites-common/1"
+    elementFormDefault="unqualified"
+    attributeFormDefault="unqualified"
+    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:plugin="http://schemas.android.com/android/jaxb/plugin/1"
+    jaxb:extensionBindingPrefixes="plugin"
+    version="1"
+    jaxb:version="2.0">
+
+    <!-- top-level element-->
+    <xsd:element name="site-list" type="sl:siteListType" />
+
+    <xsd:complexType name="siteListType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A simple list of add-ons site.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="site" type="sl:siteType"/>
+        </xsd:choice>
+    </xsd:complexType>
+
+    <xsd:complexType name="siteType" abstract="true">
+        <xsd:annotation>
+            <xsd:documentation>
+                An abstract Site, containing a user-friendly name and URL.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:all>
+            <!-- The URL of the site. -->
+            <xsd:element name="url"  type="xsd:token" />
+
+            <!-- The user-friendly name of the site. -->
+            <xsd:element name="displayName" type="xsd:string" />
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="genericSiteType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A trivial implementation of siteType.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="sl:siteType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.leanback>
+  <leanback versions="1.0.0,1.1.0-alpha04"/>
+  <leanback-paging versions="1.1.0-alpha04"/>
+  <leanback-preference versions="1.0.0,1.1.0-alpha04"/>
+  <leanback-tab versions="1.1.0-alpha04"/>
+</androidx.leanback>
+

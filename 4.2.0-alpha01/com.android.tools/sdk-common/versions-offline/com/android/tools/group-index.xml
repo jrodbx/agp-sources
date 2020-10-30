@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.tools>
+  <annotations versions="26.6.3,27.1.0-alpha10"/>
+  <common versions="26.6.3,27.1.0-alpha10"/>
+  <desugar_jdk_libs versions="1.0.5"/>
+  <desugar_jdk_libs_configuration versions="0.11.1"/>
+  <devicelib versions="26.6.3,27.0.0-alpha01"/>
+  <draw9patch versions="26.6.3,27.1.0-alpha10"/>
+  <dvlib versions="26.6.3,27.1.0-alpha10"/>
+  <ninepatch versions="26.6.3,27.1.0-alpha10"/>
+  <r8 versions="1.6.84"/>
+  <repository versions="26.6.3,27.1.0-alpha10"/>
+  <sdk-common versions="26.6.3,27.1.0-alpha10"/>
+  <sdklib versions="26.6.3,27.1.0-alpha10"/>
+  <testutils versions="26.6.3,27.1.0-alpha10"/>
+</com.android.tools>
+

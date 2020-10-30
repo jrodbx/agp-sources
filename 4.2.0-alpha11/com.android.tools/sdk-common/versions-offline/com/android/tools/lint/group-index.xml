@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.tools.lint>
+  <lint versions="26.6.4,27.0.1,27.2.0-alpha07"/>
+  <lint-api versions="26.6.4,27.0.1,27.2.0-alpha07"/>
+  <lint-checks versions="26.6.4,27.0.1,27.2.0-alpha07"/>
+  <lint-gradle versions="26.6.4,27.0.1,27.2.0-alpha07"/>
+  <lint-gradle-api versions="26.6.4,27.0.1,27.2.0-alpha07"/>
+  <lint-kotlin versions="26.2.1,26.3.0-alpha12"/>
+  <lint-model versions="27.2.0-alpha07"/>
+  <lint-tests versions="26.6.4,27.0.1,27.2.0-alpha07"/>
+</com.android.tools.lint>
+
