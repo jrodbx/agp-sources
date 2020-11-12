@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.datastore>
+  <datastore-core versions="1.0.0-alpha01"/>
+  <datastore-preferences versions="1.0.0-alpha01"/>
+</androidx.datastore>
+

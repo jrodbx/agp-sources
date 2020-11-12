@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.android.games>
+  <memory-advice versions="0.15"/>
+  <memory-advice-common versions="0.15"/>
+</com.google.android.games>
+

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.android.libraries.car>
+  <car-app versions="1.0.0-beta.1"/>
+  <car-app-testing versions="1.0.0-beta.1"/>
+</com.google.android.libraries.car>
+

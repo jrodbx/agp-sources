@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.wear>
+  <wear versions="1.1.0"/>
+  <wear-input versions="1.0.0-alpha01"/>
+  <wear-input-testing versions="1.0.0-alpha01"/>
+</androidx.wear>
+

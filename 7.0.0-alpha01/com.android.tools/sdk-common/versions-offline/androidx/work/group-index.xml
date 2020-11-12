@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.work>
+  <work-gcm versions="2.4.0,2.5.0-alpha03"/>
+  <work-multiprocess versions="2.5.0-alpha03"/>
+  <work-runtime versions="2.4.0,2.5.0-alpha03"/>
+  <work-runtime-ktx versions="2.4.0,2.5.0-alpha03"/>
+  <work-rxjava2 versions="2.4.0,2.5.0-alpha03"/>
+  <work-rxjava3 versions="2.4.0,2.5.0-alpha03"/>
+  <work-testing versions="2.4.0,2.5.0-alpha03"/>
+</androidx.work>
+

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.android.libraries.places>
+  <places versions="1.1.0,2.4.0"/>
+  <places-compat versions="1.1.0,2.4.0"/>
+</com.google.android.libraries.places>
+
