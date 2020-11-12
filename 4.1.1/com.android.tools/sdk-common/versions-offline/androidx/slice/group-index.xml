@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.slice>
+  <slice-core versions="1.0.0,1.1.0-alpha01"/>
+  <slice-builders versions="1.0.0,1.1.0-alpha01"/>
+  <slice-view versions="1.0.0,1.1.0-alpha01"/>
+  <slice-builders-ktx versions="1.0.0-alpha6"/>
+</androidx.slice>
+
