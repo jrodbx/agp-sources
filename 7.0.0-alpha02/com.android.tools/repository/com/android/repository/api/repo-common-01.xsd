@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!--
+    Schema for package repositories.
+
+    For an example XML document implmenting this schema, see
+    src/test/java/com/android/repository/impl/testData/testRepo.xml
+
+    JAXB-usable classes can be generated from this schema using the "xjc (common)" run target
+    in the tools/base IntelliJ project, or from the commandline as follows:
+    java com.sun.tools.xjc.Driver \
+         -episode repository/src/main/java/com/android/repository/api/common.xjb \
+         -p com.android.repository.impl.generated.v1 \
+         repository/src/main/java/com/android/repository/api/repo-common-01.xsd \
+         -extension -Xandroid-inheritance -d repository/src/main/java/ \
+         -b repository/src/main/java/com/android/repository/api/global.xjb \
+         -b repository/src/main/java/com/android/repository/impl/meta/common-custom.xjb \
+         -no-header
+    from tools/base with jaxb-inheritance-plugin.jar, repository classes, guava, and the
+    transitive dependencies of org.glassfish.jaxb:jaxb-xjc:17.0 on the classpath.
+
+    Note that you cannot use the xjc executable, as it does not support 3rd-party plugins.
+-->
+<xsd:schema
+        targetNamespace="http://schemas.android.com/repository/android/common/01"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="unqualified"
+        attributeFormDefault="unqualified"
+        xmlns:repo="http://schemas.android.com/repository/android/common/01"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns:plugin="http://schemas.android.com/android/jaxb/plugin/1"
+        jaxb:extensionBindingPrefixes="plugin"
+        version="1"
+        jaxb:version="2.0">
+
+    <!-- The root element -->
+    <xsd:element name="repository" type="repo:repositoryType"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            Customization specifying the superclass of ObjectFactory.
+        </xsd:documentation>
+        <xsd:appinfo>
+            <plugin:super name="com.android.repository.impl.meta.CommonFactory"/>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+    <xsd:complexType name="repositoryType">
+        <xsd:annotation>
+            <xsd:documentation>
+                The repository, consisting of a licenses and packages.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="license"
+                         type="repo:licenseType"
+                         minOccurs="0"
+                         maxOccurs="unbounded"/>
+            <xsd:element name="channel"
+                         type="repo:channelType"
+                         minOccurs="0"
+                         maxOccurs="unbounded"/>
+            <xsd:choice>
+                <xsd:element name="remotePackage" type="repo:remotePackage" minOccurs="0"
+                             maxOccurs="unbounded"/>
+                <xsd:element name="localPackage" type="repo:localPackage" minOccurs="0"
+                             maxOccurs="1"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:group name="packageFields">
+        <xsd:annotation>
+            <xsd:documentation>
+                Fields shared by local and remote packages
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <!-- Any type-specific details for this package -->
+            <xsd:element name="type-details" type="repo:typeDetails"/>
+            <!-- The full revision (major.minor.micro.preview), incremented each
+                 time a new package is generated. -->
+            <xsd:element name="revision" type="repo:revisionType"/>
+            <!-- User-friendly name for this package -->
+            <xsd:element name="display-name" type="xsd:string"/>
+            <!-- The optional license of this package. If present, users will have
+                 to agree to it before downloading. -->
+            <xsd:element name="uses-license" minOccurs="0" type="repo:licenseRefType"/>
+            <!-- References to other packages that this package depends on. -->
+            <xsd:element name="dependencies" minOccurs="0" type="repo:dependenciesType"/>
+        </xsd:sequence>
+    </xsd:group>
+
+   <xsd:attributeGroup name="packageAttributes">
+        <!-- The path for this package, which is used as a unique identifier for it -->
+        <xsd:attribute name="path" type="repo:segmentListType" use="required"/>
+        <!-- Whether this package should be considered obsolete -->
+        <xsd:attribute name="obsolete" type="xsd:boolean"/>
+    </xsd:attributeGroup>
+
+    <xsd:complexType name="remotePackage">
+        <xsd:annotation>
+            <xsd:documentation>
+                A remote package, available for download.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:group ref="repo:packageFields"/>
+            <!-- The channel this package is in. E.g. "01-stable" -->
+            <xsd:element name="channelRef" minOccurs="0" type="repo:channelRefType"/>
+
+            <!-- A list of file archives for this package. -->
+            <xsd:element name="archives" minOccurs="1" type="repo:archivesType"/>
+        </xsd:sequence>
+        <xsd:attributeGroup ref="repo:packageAttributes"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="localPackage">
+        <xsd:annotation>
+            <xsd:documentation>
+                A locally-installed package.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:group ref="repo:packageFields"/>
+        <xsd:attributeGroup ref="repo:packageAttributes"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="dependenciesType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A list of dependencies.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="dependency" type="repo:dependencyType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="archivesType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A list of archives.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+            <xsd:element name="archive" type="repo:archiveType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="licenseRefType">
+        <xsd:annotation>
+            <xsd:documentation>
+                Describes the license used by a package. The license MUST be defined
+                using a license node and referenced using the ref attribute of the
+                license element inside a package.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:attribute name="ref" type="xsd:IDREF"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="typeDetails" abstract="true">
+        <xsd:annotation>
+            <xsd:documentation>
+                Type-specific details of a package. If a repository contains packages of different
+                types, with different meta-information, this should be extended to contain the
+                appropriate information.
+                This content of this element is not used by the repository framework.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:complexType>
+
+    <xsd:complexType name="dependencyType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A dependency of one package on another, including a minimum revision of the
+                depended-upon package.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:all>
+            <xsd:element name="min-revision" type="repo:revisionType" minOccurs="0"/>
+        </xsd:all>
+        <xsd:attribute name="path" type="xsd:string" use="required"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="segmentType">
+        <xsd:annotation>
+            <xsd:documentation>
+                One path segment for an install path.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value="[a-zA-Z0-9_.]+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="segmentListType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A semi-colon separated list of a segmentTypes.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value="[a-zA-Z0-9_\-;.]+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="licenseType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A license definition. Such a license must be used later as a reference
+                using a uses-license element in one of the package elements.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="id" type="xsd:ID"/>
+                <xsd:attribute name="type" type="xsd:string" fixed="text"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="archiveType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A collection of files that can be downloaded for a given architecture.
+                The &lt;archives&gt; node is mandatory in the repository packages and the
+                collection must have at least one &lt;archive&gt; declared.
+                Each archive contains a &lt;complete&gt; element and zero or more
+                &lt;patch&gt; elements.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:all>
+            <xsd:element name="host-os" type="repo:osType" minOccurs="0"/>
+            <xsd:element name="host-bits" type="repo:bitSizeType" minOccurs="0"/>
+            <xsd:element name="jvm-bits" type="repo:bitSizeType" minOccurs="0"/>
+            <xsd:element name="min-jvm-version" type="repo:revisionType" minOccurs="0"/>
+            <xsd:element name="complete" type="repo:completeType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="patches" minOccurs="0" type="repo:patchesType"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="patchesType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A list of patches.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+            <xsd:element name="patch" type="repo:patchType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:group name="archiveFields">
+        <xsd:annotation>
+            <xsd:documentation>
+                Fields that are shared between different downloadable artifacts.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <!-- The size in bytes of the archive to download. -->
+            <xsd:element name="size" type="xsd:long"/>
+            <!-- The checksum of the archive file. -->
+            <xsd:element name="checksum">
+                <xsd:simpleType>
+                    <xsd:annotation>
+                        <xsd:documentation>A SHA1 checksum.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="([0-9a-fA-F]){40}"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <!-- The URL is an absolute URL if it starts with http://, https://
+                 or ftp://. Otherwise it is relative to the parent directory that
+                 contains this repository.xml -->
+            <xsd:element name="url" type="xsd:token"/>
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:complexType name="completeType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A zip file containing a complete version of this package.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:group ref="repo:archiveFields"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="patchType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A zip file containing a binary diff between a previous version of this package
+                (specified in &lt;base-on&gt;) and the current version.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="based-on" type="repo:revisionType"/>
+            <xsd:group ref="repo:archiveFields"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="channelType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A channel definition. Packages may contain a reference to a channel.
+                Channels are ordered by id, with the lowest id being most stable.
+                Only packages from channels at least as stable as that specified in the
+                user's preferences will be loaded.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="id">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:ID">
+                            <xsd:pattern value="channel-[0-9]"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+
+    </xsd:complexType>
+
+    <xsd:complexType name="channelRefType">
+        <xsd:attribute name="ref" type="xsd:IDREF"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="revisionType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A full revision, with a major.minor.micro and an
+                optional preview number. The major number is mandatory.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:all>
+            <xsd:element name="major" type="xsd:int"/>
+            <xsd:element name="minor" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="micro" type="xsd:int" minOccurs="0"/>
+            <xsd:element name="preview" type="xsd:int" minOccurs="0"/>
+        </xsd:all>
+    </xsd:complexType>
+
+
+    <xsd:simpleType name="bitSizeType">
+        <xsd:annotation>
+            <xsd:documentation>A CPU bit size filter.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:int">
+            <xsd:pattern value="32|64"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="osType">
+        <xsd:annotation>
+            <xsd:documentation>A host OS filter.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="linux|macosx|windows"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>
