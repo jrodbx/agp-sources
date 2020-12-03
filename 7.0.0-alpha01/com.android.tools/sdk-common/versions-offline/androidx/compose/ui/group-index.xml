@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.compose.ui>
+  <ui versions="1.0.0-alpha05"/>
+  <ui-geometry versions="1.0.0-alpha05"/>
+  <ui-graphics versions="1.0.0-alpha05"/>
+  <ui-text versions="1.0.0-alpha05"/>
+  <ui-text-android versions="1.0.0-alpha05"/>
+  <ui-unit versions="1.0.0-alpha05"/>
+  <ui-util versions="1.0.0-alpha05"/>
+  <ui-viewbinding versions="1.0.0-alpha05"/>
+</androidx.compose.ui>
+
