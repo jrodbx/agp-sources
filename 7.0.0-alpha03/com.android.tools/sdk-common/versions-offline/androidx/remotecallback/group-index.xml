@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.remotecallback>
+  <remotecallback versions="1.0.0-alpha02"/>
+  <remotecallback-processor versions="1.0.0-alpha02"/>
+</androidx.remotecallback>
+

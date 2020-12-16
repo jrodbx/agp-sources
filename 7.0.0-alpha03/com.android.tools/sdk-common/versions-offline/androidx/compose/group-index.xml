@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.compose>
+  <compose-compiler versions="1.0.0-alpha03"/>
+  <compose-runtime versions="0.1.0-dev14"/>
+</androidx.compose>
+
