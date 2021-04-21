@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jetbrains.kotlin>
+  <kotlin-compiler-embeddable versions="1.4.0-dev-withExperimentalGoogleExtensions-20200720"/>
+  <kotlin-ksp versions="1.4.0-rc-dev-experimental-20200828"/>
+  <kotlin-symbol-processing-api versions="1.4.0-rc-dev-experimental-20200828"/>
+</org.jetbrains.kotlin>
+

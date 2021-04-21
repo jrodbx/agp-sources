@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.compose.material>
+  <material versions="1.0.0-alpha09"/>
+  <material-icons-core versions="1.0.0-alpha09"/>
+  <material-icons-extended versions="1.0.0-alpha09"/>
+  <material-ripple versions="1.0.0-alpha09"/>
+</androidx.compose.material>
+

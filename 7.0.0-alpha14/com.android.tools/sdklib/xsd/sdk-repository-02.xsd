@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2016 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!--
+    Extension to repo-common for the primary repository, containing the repository root element and
+    the typedetails subclasses for platforms and sources, and associated classes.
+    Note that repo XMLs can also contain generic type-details, and so that schema should be included
+    as well when unmarshalling core repository XMLs.
+
+    JAXB-usable classes can be generated from this schema by building
+    //tools/base/sdklib:sdk-repository-2
+-->
+<xsd:schema
+        targetNamespace="http://schemas.android.com/sdk/android/repo/repository2/02"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:sdk="http://schemas.android.com/sdk/android/repo/repository2/02"
+        xmlns:common="http://schemas.android.com/repository/android/common/02"
+        xmlns:sdk-common="http://schemas.android.com/sdk/android/repo/common/02"
+        elementFormDefault="unqualified"
+        attributeFormDefault="unqualified"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns:plugin="http://schemas.android.com/android/jaxb/plugin/1"
+        jaxb:extensionBindingPrefixes="plugin"
+        version="1"
+        jaxb:version="2.0">
+
+    <xsd:import namespace="http://schemas.android.com/repository/android/common/02"/>
+    <xsd:import namespace="http://schemas.android.com/sdk/android/repo/common/02"/>
+    <xsd:import namespace="http://schemas.android.com/repository/android/generic/02"/>
+
+    <!-- the root element for primary repositories -->
+    <xsd:element name="sdk-repository" type="common:repositoryType"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            Customization specifying the superclass of ObjectFactory.
+        </xsd:documentation>
+        <xsd:appinfo>
+            <plugin:super name="com.android.sdklib.repository.meta.RepoFactory"/>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+    <xsd:complexType name="platformDetailsType">
+        <xsd:annotation>
+            <xsd:documentation>
+                type-details subclass for platform components, including information on the
+                layoutlib provided.
+            </xsd:documentation>
+            <xsd:appinfo>
+                <plugin:super name="com.android.sdklib.repository.meta.DetailsTypes$PlatformDetailsType"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="sdk-common:apiDetailsType">
+                <xsd:sequence>
+                    <!-- The layoutlib version provided by this platform. -->
+                    <xsd:element name="layoutlib" type="sdk:layoutlibType"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="layoutlibType">
+        <xsd:annotation>
+            <xsd:documentation>
+                The API level used by the LayoutLib included in a platform to communicate with the IDE.
+            </xsd:documentation>
+            <xsd:appinfo>
+                <plugin:super name="com.android.sdklib.repository.meta.DetailsTypes$PlatformDetailsType$LayoutlibType"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:attribute name="api" type="xsd:int" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="sourceDetailsType">
+        <xsd:annotation>
+            <xsd:documentation>
+                trivial type-details subclass for source components.
+            </xsd:documentation>
+            <xsd:appinfo>
+                <plugin:super name="com.android.sdklib.repository.meta.DetailsTypes$SourceDetailsType"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="sdk-common:apiDetailsType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>

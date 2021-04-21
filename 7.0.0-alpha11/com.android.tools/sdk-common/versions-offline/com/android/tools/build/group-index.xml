@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.tools.build>
+  <aapt2 versions="3.6.4-6197926,4.1.1-6503028,7.0.0-alpha04-7003907"/>
+  <aapt2-proto versions="3.6.4-6197926,4.1.1-6503028,7.0.0-alpha04-7003907"/>
+  <aaptcompiler versions="3.6.4,4.1.1,7.0.0-alpha04"/>
+  <apksig versions="3.6.4,4.1.1,7.0.0-alpha04"/>
+  <apkzlib versions="3.6.4,4.1.1,7.0.0-alpha04"/>
+  <builder versions="3.6.4,4.1.1,7.0.0-alpha04"/>
+  <builder-model versions="3.6.4,4.1.1,7.0.0-alpha04"/>
+  <builder-test-api versions="3.6.4,4.1.1,7.0.0-alpha04"/>
+  <bundletool versions="0.15.0,1.4.0"/>
+  <gradle versions="3.6.4,4.1.1,7.0.0-alpha04"/>
+  <gradle-api versions="3.6.4,4.1.1,7.0.0-alpha04"/>
+  <gradle-core versions="3.1.4,3.2.0-alpha10"/>
+  <gradle-experimental versions="0.11.1"/>
+  <manifest-merger versions="26.6.4,27.1.1,27.3.0-alpha04"/>
+  <transform-api versions="2.0.0-deprecated-use-gradle-api"/>
+</com.android.tools.build>
+

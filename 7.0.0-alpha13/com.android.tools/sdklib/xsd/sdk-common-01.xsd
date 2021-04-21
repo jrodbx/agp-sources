@@ -1,0 +1,123 @@
+<!--
+  ~ Copyright (C) 2016 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!--
+    Extension to repo-common containing common information shared by the android sdk-specific
+    schemas.
+
+    JAXB-usable classes can be generated from this schema as follows:
+    java com.sun.tools.internal.xjc.Driver \
+         -catalog <tools/base path>/repository/src/main/java/com/android/repository/api/catalog.xml \
+         -b <tools/base path>/repository/src/main/java/com/android/repository/api/common.xjb \
+         -episode com/android/sdklib/repository/sdk-common.xjb
+         -p com.android.sdklib.repository.generated.common.v1 \
+         com/android/sdklib/repository/sdk-common-01.xsd \
+         -extension -Xandroid-inheritance \
+         -b repository/src/main/java/com/android/repository/api/global.xjb \
+         -b sdklib/src/main/java/com/android/sdklib/repository/sdk-common-custom.xjb \
+         -no-header
+
+    with tools.jar, jaxb-inheritance-plugin.jar, and the repository classes on the classpath.
+    Note that you can not use the xjc executable, as it does not support 3rd-party plugins.
+-->
+
+<xsd:schema
+        targetNamespace="http://schemas.android.com/sdk/android/repo/common/01"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:sdk="http://schemas.android.com/sdk/android/repo/common/01"
+        xmlns:common="http://schemas.android.com/repository/android/common/01"
+        elementFormDefault="unqualified"
+        attributeFormDefault="unqualified"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns:plugin="http://schemas.android.com/android/jaxb/plugin/1"
+        jaxb:extensionBindingPrefixes="plugin"
+        version="1"
+        jaxb:version="2.0">
+
+    <xsd:import namespace="http://schemas.android.com/repository/android/common/01"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            Customization specifying the superclass of ObjectFactory.
+        </xsd:documentation>
+        <xsd:appinfo>
+            <plugin:super name="com.android.sdklib.repository.meta.SdkCommonFactory"/>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+    <xsd:complexType name="apiDetailsType" abstract="true">
+        <xsd:annotation>
+            <xsd:documentation>
+                Abstract subclass of type-details adding elements to specify the android version
+                a package corresponds to.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="common:typeDetails">
+                <xsd:sequence>
+                    <!-- api revision number for released android versions -->
+                    <xsd:element name="api-level" type="xsd:int"/>
+                    <!-- codename for pre-release android versions -->
+                    <xsd:element name="codename" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="idType">
+        <xsd:annotation>
+            <xsd:documentation>
+                Simple type enforcing restrictions on machine-readable strings.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value="[a-zA-Z0-9_-]+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="idDisplayType">
+        <xsd:annotation>
+            <xsd:documentation>
+                A string with both user-friendly and easily-parsed versions.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:all>
+            <xsd:element name="id" type="sdk:idType"/>
+            <xsd:element name="display" type="xsd:string"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="libraryType">
+        <xsd:annotation>
+            <xsd:documentation>
+                a library provided by this addon
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="description" type="xsd:string" minOccurs="1"/>
+        </xsd:sequence>
+        <!-- Path to the library jar file relative to the libs directory in the package.-->
+        <!-- Note that this should be required, but since it's absent in the legacy XML we don't
+             have a way to populate it when a legacy xml is installed. -->
+        <xsd:attribute name="localJarPath" type="xsd:string"/>
+        <!-- Name of this library -->
+        <xsd:attribute name="name" use="required" type="xsd:string"/>
+        <!-- Whether a manifest file entry is required for this library -->
+        <xsd:attribute name="manifestEntryRequired" use="optional" default="true"
+                       type="xsd:boolean"/>
+    </xsd:complexType>
+
+</xsd:schema>

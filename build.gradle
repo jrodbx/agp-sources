@@ -3,7 +3,7 @@
  * 2) Run './gradlew dumpSources'
  * 3) Check changeset into source control
  */
-def agpVersion = '4.1.2'
+def agpVersion = '7.0.0-alpha14'
 
 repositories {
   google()

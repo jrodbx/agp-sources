@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.tools.analytics-library>
+  <crash versions="26.6.4,27.1.1,27.3.0-alpha04"/>
+  <inspector versions="26.6.4,27.1.1,27.3.0-alpha04"/>
+  <protos versions="26.6.4,27.1.1,27.3.0-alpha04"/>
+  <publisher versions="26.6.4,27.1.1,27.3.0-alpha04"/>
+  <shared versions="26.6.4,27.1.1,27.3.0-alpha04"/>
+  <testing versions="26.6.4,27.1.1,27.3.0-alpha04"/>
+  <tracker versions="26.6.4,27.1.1,27.3.0-alpha04"/>
+</com.android.tools.analytics-library>
+

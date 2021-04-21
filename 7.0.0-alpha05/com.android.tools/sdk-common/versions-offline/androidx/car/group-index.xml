@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.car>
+  <car versions="1.0.0-alpha7"/>
+  <car-cluster versions="1.0.0-alpha5"/>
+</androidx.car>
+
