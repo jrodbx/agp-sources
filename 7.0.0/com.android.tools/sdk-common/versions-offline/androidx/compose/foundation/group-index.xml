@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.compose.foundation>
+  <foundation versions="1.0.0-beta04"/>
+  <foundation-layout versions="1.0.0-beta04"/>
+  <foundation-text versions="1.0.0-alpha07"/>
+</androidx.compose.foundation>
+

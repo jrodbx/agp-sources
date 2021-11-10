@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.test.espresso.idling>
+  <idling-concurrent versions="3.3.0,3.4.0-alpha05"/>
+  <idling-net versions="3.3.0,3.4.0-alpha05"/>
+</androidx.test.espresso.idling>
+

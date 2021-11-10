@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.appcompat>
+  <appcompat versions="1.2.0,1.3.0-rc01"/>
+  <appcompat-resources versions="1.2.0,1.3.0-rc01"/>
+</androidx.appcompat>
+

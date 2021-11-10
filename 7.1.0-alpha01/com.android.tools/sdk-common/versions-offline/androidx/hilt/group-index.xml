@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.hilt>
+  <hilt-common versions="1.0.0-beta01"/>
+  <hilt-compiler versions="1.0.0-beta01"/>
+  <hilt-lifecycle-viewmodel versions="1.0.0-alpha03"/>
+  <hilt-navigation versions="1.0.0-beta01"/>
+  <hilt-navigation-compose versions="1.0.0-alpha01"/>
+  <hilt-navigation-fragment versions="1.0.0-beta01"/>
+  <hilt-work versions="1.0.0-beta01"/>
+</androidx.hilt>
+

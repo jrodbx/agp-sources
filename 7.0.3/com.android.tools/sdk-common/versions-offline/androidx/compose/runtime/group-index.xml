@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.compose.runtime>
+  <runtime versions="1.0.0-beta04"/>
+  <runtime-dispatch versions="1.0.0-alpha12"/>
+  <runtime-livedata versions="1.0.0-beta04"/>
+  <runtime-rxjava2 versions="1.0.0-beta04"/>
+  <runtime-rxjava3 versions="1.0.0-beta04"/>
+  <runtime-saveable versions="1.0.0-beta04"/>
+  <runtime-saved-instance-state versions="1.0.0-alpha11"/>
+</androidx.compose.runtime>
+

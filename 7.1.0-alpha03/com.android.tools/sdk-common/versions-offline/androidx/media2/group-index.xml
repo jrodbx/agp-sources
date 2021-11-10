@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.media2>
+  <media2 versions="1.0.0-alpha04"/>
+  <media2-common versions="1.1.2"/>
+  <media2-exoplayer versions="1.1.2"/>
+  <media2-player versions="1.1.2"/>
+  <media2-session versions="1.1.2"/>
+  <media2-widget versions="1.1.2"/>
+</androidx.media2>
+

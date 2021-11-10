@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.navigation.safeargs>
+  <androidx.navigation.safeargs.gradle.plugin versions="2.4.0-alpha04"/>
+</androidx.navigation.safeargs>
+

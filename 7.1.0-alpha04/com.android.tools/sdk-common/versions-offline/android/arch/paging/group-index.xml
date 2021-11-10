@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<android.arch.paging>
+  <runtime versions="1.0.1"/>
+  <common versions="1.0.1"/>
+  <rxjava2 versions="1.0.1"/>
+</android.arch.paging>
+

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.tools.layoutlib>
+  <layoutlib-api versions="26.6.4,27.1.3,30.0.0-alpha14"/>
+</com.android.tools.layoutlib>
+

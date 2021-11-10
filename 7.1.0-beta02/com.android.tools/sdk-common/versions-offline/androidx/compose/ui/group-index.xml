@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.compose.ui>
+  <ui versions="1.0.0-rc01"/>
+  <ui-geometry versions="1.0.0-rc01"/>
+  <ui-graphics versions="1.0.0-rc01"/>
+  <ui-test versions="1.0.0-rc01"/>
+  <ui-test-junit4 versions="1.0.0-rc01"/>
+  <ui-test-manifest versions="1.0.0-rc01"/>
+  <ui-text versions="1.0.0-rc01"/>
+  <ui-text-android versions="1.0.0-alpha06"/>
+  <ui-tooling versions="1.0.0-rc01"/>
+  <ui-tooling-data versions="1.0.0-rc01"/>
+  <ui-tooling-preview versions="1.0.0-rc01"/>
+  <ui-unit versions="1.0.0-rc01"/>
+  <ui-util versions="1.0.0-rc01"/>
+  <ui-viewbinding versions="1.0.0-rc01"/>
+</androidx.compose.ui>
+

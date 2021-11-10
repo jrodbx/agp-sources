@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.navigation>
+  <navigation-common versions="2.3.5"/>
+  <navigation-common-ktx versions="2.3.5"/>
+  <navigation-compose versions="1.0.0-alpha10"/>
+  <navigation-dynamic-features-fragment versions="2.3.5"/>
+  <navigation-dynamic-features-runtime versions="2.3.5"/>
+  <navigation-fragment versions="2.3.5"/>
+  <navigation-fragment-ktx versions="2.3.5"/>
+  <navigation-runtime versions="2.3.5"/>
+  <navigation-runtime-ktx versions="2.3.5"/>
+  <navigation-safe-args-generator versions="2.3.5"/>
+  <navigation-safe-args-gradle-plugin versions="2.3.5"/>
+  <navigation-testing versions="2.3.5"/>
+  <navigation-ui versions="2.3.5"/>
+  <navigation-ui-ktx versions="2.3.5"/>
+</androidx.navigation>
+

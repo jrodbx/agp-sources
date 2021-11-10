@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.devtools.ksp>
+  <com.google.devtools.ksp.gradle.plugin versions="1.4.32-1.0.0-alpha07"/>
+  <symbol-processing versions="1.4.32-1.0.0-alpha07"/>
+  <symbol-processing-api versions="1.4.32-1.0.0-alpha07"/>
+  <symbol-processing-gradle-plugin versions="1.4.32-1.0.0-alpha07"/>
+</com.google.devtools.ksp>
+

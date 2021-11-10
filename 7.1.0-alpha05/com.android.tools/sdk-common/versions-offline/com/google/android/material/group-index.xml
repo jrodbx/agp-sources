@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.android.material>
+  <compose-theme-adapter versions="1.0.0-beta04"/>
+  <material versions="1.3.0,1.4.0-alpha02"/>
+</com.google.android.material>
+

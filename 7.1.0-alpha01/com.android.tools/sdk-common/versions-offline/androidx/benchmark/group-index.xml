@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.benchmark>
+  <benchmark versions="1.0.0-alpha03"/>
+  <benchmark-common versions="1.0.0,1.1.0-alpha01"/>
+  <benchmark-gradle-plugin versions="1.0.0,1.1.0-alpha01"/>
+  <benchmark-junit4 versions="1.0.0,1.1.0-alpha01"/>
+</androidx.benchmark>
+

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.wear>
+  <wear versions="1.1.0,1.2.0-alpha07"/>
+  <wear-complications-data versions="1.0.0-alpha11"/>
+  <wear-complications-provider versions="1.0.0-alpha11"/>
+  <wear-input versions="1.0.0,1.1.0-alpha01"/>
+  <wear-input-testing versions="1.0.0,1.1.0-alpha01"/>
+  <wear-ongoing versions="1.0.0-alpha03"/>
+  <wear-phone-interactions versions="1.0.0-alpha04"/>
+  <wear-remote-interactions versions="1.0.0-alpha03"/>
+  <wear-tiles versions="1.0.0-alpha01"/>
+  <wear-tiles-proto versions="1.0.0-alpha01"/>
+  <wear-tiles-renderer versions="1.0.0-alpha01"/>
+  <wear-watchface versions="1.0.0-alpha11"/>
+  <wear-watchface-client versions="1.0.0-alpha11"/>
+  <wear-watchface-client-guava versions="1.0.0-alpha11"/>
+  <wear-watchface-complications-rendering versions="1.0.0-alpha11"/>
+  <wear-watchface-data versions="1.0.0-alpha11"/>
+  <wear-watchface-editor versions="1.0.0-alpha11"/>
+  <wear-watchface-editor-guava versions="1.0.0-alpha11"/>
+  <wear-watchface-guava versions="1.0.0-alpha11"/>
+  <wear-watchface-style versions="1.0.0-alpha11"/>
+</androidx.wear>
+

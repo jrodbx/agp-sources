@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.transition>
+  <transition versions="1.4.0"/>
+  <transition-ktx versions="1.4.0"/>
+</androidx.transition>
+

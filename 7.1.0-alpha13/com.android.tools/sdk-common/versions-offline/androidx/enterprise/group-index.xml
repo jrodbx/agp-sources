@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.enterprise>
+  <enterprise-feedback versions="1.1.0"/>
+  <enterprise-feedback-testing versions="1.1.0"/>
+</androidx.enterprise>
+

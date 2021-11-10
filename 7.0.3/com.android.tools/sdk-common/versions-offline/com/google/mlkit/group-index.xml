@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.mlkit>
+  <barcode-scanning versions="16.1.1"/>
+  <common versions="16.1.0,17.1.1"/>
+  <digital-ink-recognition versions="16.2.0"/>
+  <entity-extraction versions="16.0.0-beta1"/>
+  <face-detection versions="16.0.6"/>
+  <image-labeling versions="16.2.0,17.0.3"/>
+  <image-labeling-automl versions="16.2.1"/>
+  <image-labeling-common versions="16.2.1,17.0.0"/>
+  <image-labeling-custom versions="16.3.1"/>
+  <image-labeling-default-common versions="16.0.0"/>
+  <language-id versions="16.1.1"/>
+  <linkfirebase versions="16.1.0"/>
+  <mediapipe-internal versions="16.0.0,17.0.0-beta1"/>
+  <object-detection versions="16.2.3"/>
+  <object-detection-common versions="16.2.1,17.0.0"/>
+  <object-detection-custom versions="16.3.1"/>
+  <pose-detection versions="16.0.0,17.0.0,17.0.1-beta3"/>
+  <pose-detection-accurate versions="17.0.0,17.0.1-beta3"/>
+  <pose-detection-common versions="17.0.0,17.1.0-beta2"/>
+  <segmentation-selfie versions="16.0.0-beta1"/>
+  <smart-reply versions="16.1.1"/>
+  <translate versions="16.1.2"/>
+  <vision-common versions="16.3.0"/>
+  <vision-internal-vkp versions="17.0.1,18.0.0"/>
+</com.google.mlkit>
+

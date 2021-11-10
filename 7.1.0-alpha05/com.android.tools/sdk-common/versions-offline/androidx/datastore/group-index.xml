@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.datastore>
+  <datastore versions="1.0.0-alpha08"/>
+  <datastore-core versions="1.0.0-alpha08"/>
+  <datastore-preferences versions="1.0.0-alpha08"/>
+  <datastore-preferences-core versions="1.0.0-alpha08"/>
+  <datastore-preferences-rxjava2 versions="1.0.0-alpha08"/>
+  <datastore-preferences-rxjava3 versions="1.0.0-alpha08"/>
+  <datastore-rxjava2 versions="1.0.0-alpha08"/>
+  <datastore-rxjava3 versions="1.0.0-alpha08"/>
+</androidx.datastore>
+

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.android.exoplayer>
+  <exoplayer versions="2.13.3"/>
+  <exoplayer-common versions="2.13.3"/>
+  <exoplayer-core versions="2.13.3"/>
+  <exoplayer-dash versions="2.13.3"/>
+  <exoplayer-extractor versions="2.13.3"/>
+  <exoplayer-hls versions="2.13.3"/>
+  <exoplayer-robolectricutils versions="2.13.3"/>
+  <exoplayer-smoothstreaming versions="2.13.3"/>
+  <exoplayer-testutils versions="2.13.3"/>
+  <exoplayer-transformer versions="2.13.3"/>
+  <exoplayer-ui versions="2.13.3"/>
+  <extension-cast versions="2.13.3"/>
+  <extension-cronet versions="2.13.3"/>
+  <extension-gvr versions="2.13.3"/>
+  <extension-ima versions="2.13.3"/>
+  <extension-jobdispatcher versions="2.13.3"/>
+  <extension-leanback versions="2.13.3"/>
+  <extension-media2 versions="2.13.3"/>
+  <extension-mediasession versions="2.13.3"/>
+  <extension-okhttp versions="2.13.3"/>
+  <extension-rtmp versions="2.13.3"/>
+  <extension-workmanager versions="2.13.3"/>
+</com.google.android.exoplayer>
+

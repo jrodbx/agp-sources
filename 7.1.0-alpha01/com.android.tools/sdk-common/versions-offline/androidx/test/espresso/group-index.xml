@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.test.espresso>
+  <espresso-accessibility versions="3.3.0,3.4.0-alpha05"/>
+  <espresso-contrib versions="3.3.0,3.4.0-alpha05"/>
+  <espresso-core versions="3.3.0,3.4.0-alpha05"/>
+  <espresso-idling-resource versions="3.3.0,3.4.0-alpha05"/>
+  <espresso-intents versions="3.3.0,3.4.0-alpha05"/>
+  <espresso-remote versions="3.3.0,3.4.0-alpha05"/>
+  <espresso-web versions="3.3.0,3.4.0-alpha05"/>
+</androidx.test.espresso>
+

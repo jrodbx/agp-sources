@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.android.fhir>
+  <data-capture versions="0.1.0-alpha02"/>
+  <engine versions="0.1.0-alpha01"/>
+</com.google.android.fhir>
+

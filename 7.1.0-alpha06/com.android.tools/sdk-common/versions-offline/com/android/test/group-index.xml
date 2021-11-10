@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.test>
+  <com.android.test.gradle.plugin versions="4.2.2,7.1.0-alpha03"/>
+</com.android.test>
+

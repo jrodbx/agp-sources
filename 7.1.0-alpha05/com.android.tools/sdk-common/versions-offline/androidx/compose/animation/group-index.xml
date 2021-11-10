@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.compose.animation>
+  <animation versions="1.0.0-beta04"/>
+  <animation-core versions="1.0.0-beta04"/>
+</androidx.compose.animation>
+

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.lifecycle>
+  <lifecycle-common versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-common-java8 versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-compiler versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-extensions versions="2.2.0"/>
+  <lifecycle-livedata versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-livedata-core versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-livedata-core-ktx versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-livedata-ktx versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-process versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-reactivestreams versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-reactivestreams-ktx versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-runtime versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-runtime-ktx versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-runtime-testing versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-service versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-viewmodel versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-viewmodel-compose versions="1.0.0-alpha04"/>
+  <lifecycle-viewmodel-ktx versions="2.3.1,2.4.0-alpha01"/>
+  <lifecycle-viewmodel-savedstate versions="1.0.0,2.3.1,2.4.0-alpha01"/>
+</androidx.lifecycle>
+

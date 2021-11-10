@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.games>
+  <games-frame-pacing versions="1.7.0-beta02"/>
+  <games-performance-tuner versions="1.1.0-beta02"/>
+</androidx.games>
+

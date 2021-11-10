@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.androidbrowserhelper>
+  <androidbrowserhelper versions="1.4.0,2.2.0"/>
+  <billing versions="1.0.0-alpha07"/>
+  <locationdelegation versions="1.0.0"/>
+</com.google.androidbrowserhelper>
+

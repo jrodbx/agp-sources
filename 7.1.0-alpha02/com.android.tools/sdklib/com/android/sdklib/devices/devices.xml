@@ -1,0 +1,1852 @@
+<?xml version="1.0"?>
+<d:devices
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:d="http://schemas.android.com/sdk/devices/6">
+
+    <d:device>
+        <d:name>13.5" Freeform</d:name>
+        <d:id>13.5in Freeform</d:id>
+        <d:manufacturer>Generic</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>xlarge</d:screen-size>
+                <d:diagonal-length>13.5</d:diagonal-length>
+                <d:pixel-density>hdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>2560</d:x-dimension>
+                    <d:y-dimension>1440</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>240</d:xdpi>
+                <d:ydpi>240</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Compass
+                GPS
+                Gyroscope
+                LightSensor
+                ProximitySensor
+                StepCounter
+                StepDetector
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>false</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="GiB">4</d:ram>
+            <d:buttons>soft</d:buttons>
+            <d:internal-storage unit="GiB">64</d:internal-storage>
+            <d:removable-storage unit="MiB">0</d:removable-storage>
+            <d:cpu>Qualcomm Snapdragon 845</d:cpu>
+            <d:gpu>Adreno 630</d:gpu>
+            <d:abi>
+                arm64-v8a
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock> </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+        <d:software>
+            <d:api-level>29</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles> </d:bluetooth-profiles>
+            <d:gl-version>3.2</d:gl-version>
+            <d:gl-extensions>GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_half_float GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_compressed_ETC1_RGB8_texture GL_AMD_compressed_ATC_texture GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_OES_texture_compression_astc GL_OES_texture_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_OES_texture_3D GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_QCOM_alpha_test GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_EXT_sRGB GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_EXT_texture_type_2_10_10_10_REV GL_EXT_texture_sRGB_decode GL_EXT_texture_format_sRGB_override GL_OES_element_index_uint GL_EXT_copy_image GL_EXT_geometry_shader GL_EXT_tessellation_shader GL_OES_texture_stencil8 GL_EXT_shader_io_blocks GL_OES_shader_image_atomic GL_OES_sample_variables GL_EXT_texture_border_clamp GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_shader_multisample_interpolation GL_EXT_texture_cube_map_array GL_EXT_draw_buffers_indexed GL_EXT_gpu_shader5 GL_EXT_robustness GL_EXT_texture_buffer GL_EXT_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_get_program_binary GL_EXT_debug_label GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_QCOM_tiled_rendering GL_ANDROID_extension_pack_es31a GL_EXT_primitive_bounding_box GL_OES_standard_derivatives GL_OES_vertex_array_object GL_EXT_disjoint_timer_query GL_KHR_debug GL_EXT_YUV_target GL_EXT_sRGB_write_control GL_EXT_texture_norm16 GL_EXT_discard_framebuffer GL_OES_surfaceless_context GL_OVR_multiview GL_OVR_multiview2 GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_EXT_debug_marker GL_OES_EGL_image_external_essl3 GL_OVR_multiview_multisampled_render_to_texture GL_EXT_buffer_storage GL_EXT_external_buffer GL_EXT_blit_framebuffer_params GL_EXT_clip_cull_distance GL_EXT_protected_textures GL_EXT_shader_non_constant_global_initializers GL_QCOM_texture_foveated GL_QCOM_shader_framebuffer_fetch_noncoherent GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_EGL_image_array GL_NV_shader_noperspective_interpolation GL_KHR_robust_buffer_access_behavior GL_EXT_EGL_image_storage GL_EXT_clip_control </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait">
+            <d:description>The device in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape" default="true">
+            <d:description>The device in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+    <d:device>
+        <d:name>7.6" Fold-in with outer display</d:name>
+        <d:id>7.6in Foldable</d:id>
+        <d:manufacturer>Generic</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>7.59</d:diagonal-length>
+                <d:pixel-density>xxhdpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>1768</d:x-dimension>
+                    <d:y-dimension>2208</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>445</d:xdpi>
+                <d:ydpi>445</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+                <d:foldable-region>
+                  <d:x-folded-offset>0</d:x-folded-offset>
+                  <d:y-folded-offset>0</d:y-folded-offset>
+                  <d:x-folded-dimension>884</d:x-folded-dimension>
+                  <d:y-folded-dimension>2208</d:y-folded-dimension>
+                </d:foldable-region>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Compass
+                GPS
+                Gyroscope
+                LightSensor
+                ProximitySensor
+                StepCounter
+                StepDetector
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>false</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="GiB">4</d:ram>
+            <d:buttons>soft</d:buttons>
+            <d:internal-storage unit="GiB">64</d:internal-storage>
+            <d:removable-storage unit="MiB">0</d:removable-storage>
+            <d:cpu>Qualcomm Snapdragon 835</d:cpu>
+            <d:gpu>Adreno 540</d:gpu>
+            <d:abi>
+                arm64-v8a
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock> </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+        <d:software>
+            <d:api-level>30</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles> </d:bluetooth-profiles>
+            <d:gl-version>3.2</d:gl-version>
+            <d:gl-extensions>GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_half_float GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_compressed_ETC1_RGB8_texture GL_AMD_compressed_ATC_texture GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_OES_texture_compression_astc GL_OES_texture_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_OES_texture_3D GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_QCOM_alpha_test GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_EXT_sRGB GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_EXT_texture_type_2_10_10_10_REV GL_EXT_texture_sRGB_decode GL_OES_element_index_uint GL_EXT_copy_image GL_EXT_geometry_shader GL_EXT_tessellation_shader GL_OES_texture_stencil8 GL_EXT_shader_io_blocks GL_OES_shader_image_atomic GL_OES_sample_variables GL_EXT_texture_border_clamp GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_shader_multisample_interpolation GL_EXT_texture_cube_map_array GL_EXT_draw_buffers_indexed GL_EXT_gpu_shader5 GL_EXT_robustness GL_EXT_texture_buffer GL_EXT_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_get_program_binary GL_EXT_debug_label GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_QCOM_tiled_rendering GL_ANDROID_extension_pack_es31a GL_EXT_primitive_bounding_box GL_OES_standard_derivatives GL_OES_vertex_array_object GL_EXT_disjoint_timer_query GL_KHR_debug GL_EXT_YUV_target GL_EXT_sRGB_write_control GL_EXT_texture_norm16 GL_EXT_discard_framebuffer GL_OES_surfaceless_context GL_OVR_multiview GL_OVR_multiview2 GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_EXT_debug_marker GL_OES_EGL_image_external_essl3 GL_OVR_multiview_multisampled_render_to_texture GL_EXT_buffer_storage GL_EXT_external_buffer GL_EXT_blit_framebuffer_params GL_EXT_clip_cull_distance GL_EXT_protected_textures GL_EXT_shader_non_constant_global_initializers GL_QCOM_framebuffer_foveated GL_QCOM_shader_framebuffer_fetch_noncoherent GL_EXT_EGL_image_array GL_NV_shader_noperspective_interpolation </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The device in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The device in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>8" Fold-out</d:name>
+        <d:id>8in Foldable</d:id>
+        <d:manufacturer>Generic</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>8.03</d:diagonal-length>
+                <d:pixel-density>420dpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>2200</d:x-dimension>
+                    <d:y-dimension>2480</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>413</d:xdpi>
+                <d:ydpi>413</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+                <d:foldable-region>
+                    <d:x-folded-offset>0</d:x-folded-offset>
+                    <d:y-folded-offset>0</d:y-folded-offset>
+                    <d:x-folded-dimension>1148</d:x-folded-dimension>
+                    <d:y-folded-dimension>2480</d:y-folded-dimension>
+                </d:foldable-region>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Compass
+                GPS
+                Gyroscope
+                LightSensor
+                ProximitySensor
+                StepCounter
+                StepDetector
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>false</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="GiB">4</d:ram>
+            <d:buttons>soft</d:buttons>
+            <d:internal-storage unit="GiB">64</d:internal-storage>
+            <d:removable-storage unit="MiB">0</d:removable-storage>
+            <d:cpu>Qualcomm Snapdragon 835</d:cpu>
+            <d:gpu>Adreno 540</d:gpu>
+            <d:abi>
+                arm64-v8a
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock> </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+        <d:software>
+            <d:api-level>30</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles> </d:bluetooth-profiles>
+            <d:gl-version>3.2</d:gl-version>
+            <d:gl-extensions>GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_half_float GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_compressed_ETC1_RGB8_texture GL_AMD_compressed_ATC_texture GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_OES_texture_compression_astc GL_OES_texture_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_OES_texture_3D GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_QCOM_alpha_test GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_EXT_sRGB GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_EXT_texture_type_2_10_10_10_REV GL_EXT_texture_sRGB_decode GL_OES_element_index_uint GL_EXT_copy_image GL_EXT_geometry_shader GL_EXT_tessellation_shader GL_OES_texture_stencil8 GL_EXT_shader_io_blocks GL_OES_shader_image_atomic GL_OES_sample_variables GL_EXT_texture_border_clamp GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_shader_multisample_interpolation GL_EXT_texture_cube_map_array GL_EXT_draw_buffers_indexed GL_EXT_gpu_shader5 GL_EXT_robustness GL_EXT_texture_buffer GL_EXT_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_get_program_binary GL_EXT_debug_label GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_QCOM_tiled_rendering GL_ANDROID_extension_pack_es31a GL_EXT_primitive_bounding_box GL_OES_standard_derivatives GL_OES_vertex_array_object GL_EXT_disjoint_timer_query GL_KHR_debug GL_EXT_YUV_target GL_EXT_sRGB_write_control GL_EXT_texture_norm16 GL_EXT_discard_framebuffer GL_OES_surfaceless_context GL_OVR_multiview GL_OVR_multiview2 GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_EXT_debug_marker GL_OES_EGL_image_external_essl3 GL_OVR_multiview_multisampled_render_to_texture GL_EXT_buffer_storage GL_EXT_external_buffer GL_EXT_blit_framebuffer_params GL_EXT_clip_cull_distance GL_EXT_protected_textures GL_EXT_shader_non_constant_global_initializers GL_QCOM_framebuffer_foveated GL_QCOM_shader_framebuffer_fetch_noncoherent GL_EXT_EGL_image_array GL_NV_shader_noperspective_interpolation </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The device in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The device in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>6.7" Horizontal Fold-in</d:name>
+        <d:id>6.7in Foldable</d:id>
+        <d:manufacturer>Generic</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>6.7</d:diagonal-length>
+                <d:pixel-density>xxhdpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>1080</d:x-dimension>
+                    <d:y-dimension>2636</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>445</d:xdpi>
+                <d:ydpi>445</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Compass
+                GPS
+                Gyroscope
+                LightSensor
+                ProximitySensor
+                StepCounter
+                StepDetector
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>false</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="GiB">4</d:ram>
+            <d:buttons>soft</d:buttons>
+            <d:internal-storage unit="GiB">64</d:internal-storage>
+            <d:removable-storage unit="MiB">0</d:removable-storage>
+            <d:cpu>Qualcomm Snapdragon 835</d:cpu>
+            <d:gpu>Adreno 540</d:gpu>
+            <d:abi>
+                arm64-v8a
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock> </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+        <d:software>
+            <d:api-level>30</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles> </d:bluetooth-profiles>
+            <d:gl-version>3.2</d:gl-version>
+            <d:gl-extensions>GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_half_float GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_compressed_ETC1_RGB8_texture GL_AMD_compressed_ATC_texture GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_OES_texture_compression_astc GL_OES_texture_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_OES_texture_3D GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_QCOM_alpha_test GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_EXT_sRGB GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_EXT_texture_type_2_10_10_10_REV GL_EXT_texture_sRGB_decode GL_OES_element_index_uint GL_EXT_copy_image GL_EXT_geometry_shader GL_EXT_tessellation_shader GL_OES_texture_stencil8 GL_EXT_shader_io_blocks GL_OES_shader_image_atomic GL_OES_sample_variables GL_EXT_texture_border_clamp GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_shader_multisample_interpolation GL_EXT_texture_cube_map_array GL_EXT_draw_buffers_indexed GL_EXT_gpu_shader5 GL_EXT_robustness GL_EXT_texture_buffer GL_EXT_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_get_program_binary GL_EXT_debug_label GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_QCOM_tiled_rendering GL_ANDROID_extension_pack_es31a GL_EXT_primitive_bounding_box GL_OES_standard_derivatives GL_OES_vertex_array_object GL_EXT_disjoint_timer_query GL_KHR_debug GL_EXT_YUV_target GL_EXT_sRGB_write_control GL_EXT_texture_norm16 GL_EXT_discard_framebuffer GL_OES_surfaceless_context GL_OVR_multiview GL_OVR_multiview2 GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_EXT_debug_marker GL_OES_EGL_image_external_essl3 GL_OVR_multiview_multisampled_render_to_texture GL_EXT_buffer_storage GL_EXT_external_buffer GL_EXT_blit_framebuffer_params GL_EXT_clip_cull_distance GL_EXT_protected_textures GL_EXT_shader_non_constant_global_initializers GL_QCOM_framebuffer_foveated GL_QCOM_shader_framebuffer_fetch_noncoherent GL_EXT_EGL_image_array GL_NV_shader_noperspective_interpolation </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The device in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The device in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>7.4" Rollable</d:name>
+        <d:id>7.4in Rollable</d:id>
+        <d:manufacturer>Generic</d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>xlarge</d:screen-size>
+                <d:diagonal-length>7.4</d:diagonal-length>
+                <d:pixel-density>420dpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>1600</d:x-dimension>
+                    <d:y-dimension>2428</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>413</d:xdpi>
+                <d:ydpi>413</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+                <d:foldable-region>
+                    <d:x-folded-offset>0</d:x-folded-offset>
+                    <d:y-folded-offset>0</d:y-folded-offset>
+                    <d:x-folded-dimension>1080</d:x-folded-dimension>
+                    <d:y-folded-dimension>2428</d:y-folded-dimension>
+                    <d:x-folded-offset-2>0</d:x-folded-offset-2>
+                    <d:y-folded-offset-2>0</d:y-folded-offset-2>
+                    <d:x-folded-dimension-2>1366</d:x-folded-dimension-2>
+                    <d:y-folded-dimension-2>2428</d:y-folded-dimension-2>
+                </d:foldable-region>
+            </d:screen>
+            <d:networking>
+                Wifi
+                Bluetooth
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Compass
+                GPS
+                Gyroscope
+                LightSensor
+                ProximitySensor
+                StepCounter
+                StepDetector
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>false</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="GiB">4</d:ram>
+            <d:buttons>soft</d:buttons>
+            <d:internal-storage unit="GiB">64</d:internal-storage>
+            <d:removable-storage unit="MiB">0</d:removable-storage>
+            <d:cpu>Qualcomm Snapdragon 835</d:cpu>
+            <d:gpu>Adreno 540</d:gpu>
+            <d:abi>
+                arm64-v8a
+                armeabi-v7a
+                armeabi
+            </d:abi>
+            <d:dock> </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+        <d:software>
+            <d:api-level>30</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles> </d:bluetooth-profiles>
+            <d:gl-version>3.2</d:gl-version>
+            <d:gl-extensions>GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_half_float GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_compressed_ETC1_RGB8_texture GL_AMD_compressed_ATC_texture GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_OES_texture_compression_astc GL_OES_texture_npot GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_OES_texture_3D GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_QCOM_alpha_test GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_EXT_sRGB GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_EXT_texture_type_2_10_10_10_REV GL_EXT_texture_sRGB_decode GL_OES_element_index_uint GL_EXT_copy_image GL_EXT_geometry_shader GL_EXT_tessellation_shader GL_OES_texture_stencil8 GL_EXT_shader_io_blocks GL_OES_shader_image_atomic GL_OES_sample_variables GL_EXT_texture_border_clamp GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_shader_multisample_interpolation GL_EXT_texture_cube_map_array GL_EXT_draw_buffers_indexed GL_EXT_gpu_shader5 GL_EXT_robustness GL_EXT_texture_buffer GL_EXT_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_get_program_binary GL_EXT_debug_label GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_QCOM_tiled_rendering GL_ANDROID_extension_pack_es31a GL_EXT_primitive_bounding_box GL_OES_standard_derivatives GL_OES_vertex_array_object GL_EXT_disjoint_timer_query GL_KHR_debug GL_EXT_YUV_target GL_EXT_sRGB_write_control GL_EXT_texture_norm16 GL_EXT_discard_framebuffer GL_OES_surfaceless_context GL_OVR_multiview GL_OVR_multiview2 GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_EXT_debug_marker GL_OES_EGL_image_external_essl3 GL_OVR_multiview_multisampled_render_to_texture GL_EXT_buffer_storage GL_EXT_external_buffer GL_EXT_blit_framebuffer_params GL_EXT_clip_cull_distance GL_EXT_protected_textures GL_EXT_shader_non_constant_global_initializers GL_QCOM_framebuffer_foveated GL_QCOM_shader_framebuffer_fetch_noncoherent GL_EXT_EGL_image_array GL_NV_shader_noperspective_interpolation </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The device in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The device in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+    <d:device>
+        <d:name>2.7" QVGA</d:name>
+        <d:id>2.7in QVGA</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>small</d:screen-size>
+                <d:diagonal-length>2.7</d:diagonal-length>
+                <d:pixel-density>ldpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>240</d:x-dimension>
+                    <d:y-dimension>320</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>145</d:xdpi>
+                <d:ydpi>145</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>2.7" QVGA slider</d:name>
+        <d:id>2.7in QVGA slider</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>small</d:screen-size>
+                <d:diagonal-length>2.7</d:diagonal-length>
+                <d:pixel-density>ldpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>240</d:x-dimension>
+                    <d:y-dimension>320</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>145</d:xdpi>
+                <d:ydpi>145</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>qwerty</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape, closed">
+            <d:description>The phone in landscape view with the keyboard closed</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape, open">
+            <d:description>The phone in landscape view with the keyboard open</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keysexposed</d:keyboard-state>
+            <d:nav-state>navexposed</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>3.2" HVGA slider (ADP1)</d:name>
+        <d:id>3.2in HVGA slider (ADP1)</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>3.2</d:diagonal-length>
+                <d:pixel-density>mdpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>320</d:x-dimension>
+                    <d:y-dimension>480</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>180.6</d:xdpi>
+                <d:ydpi>182</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>qwerty</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape, closed">
+            <d:description>The phone in landscape view with the keyboard closed</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape, open">
+            <d:description>The phone in landscape view with the keyboard open</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keysexposed</d:keyboard-state>
+            <d:nav-state>navexposed</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>3.2" QVGA (ADP2)</d:name>
+        <d:id>3.2in QVGA (ADP2)</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>3.2</d:diagonal-length>
+                <d:pixel-density>mdpi</d:pixel-density>
+                <d:screen-ratio>notlong</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>320</d:x-dimension>
+                    <d:y-dimension>480</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>180.6</d:xdpi>
+                <d:ydpi>182</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>trackball</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navexposed</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navexposed</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>3.3" WQVGA</d:name>
+        <d:id>3.3in WQVGA</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>3.3</d:diagonal-length>
+                <d:pixel-density>ldpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>240</d:x-dimension>
+                    <d:y-dimension>400</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>141</d:xdpi>
+                <d:ydpi>141</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+    </d:device>
+    <d:device>
+        <d:name>3.4" WQVGA</d:name>
+        <d:id>3.4in WQVGA</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>3.4</d:diagonal-length>
+                <d:pixel-density>ldpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>240</d:x-dimension>
+                    <d:y-dimension>432</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>145</d:xdpi>
+                <d:ydpi>145</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>3.7" WVGA (Nexus One)</d:name>
+        <d:id>3.7in WVGA (Nexus One)</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>3.4</d:diagonal-length>
+                <d:pixel-density>hdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>480</d:x-dimension>
+                    <d:y-dimension>800</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>254</d:xdpi>
+                <d:ydpi>254</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>trackball</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navexposed</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navexposed</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>3.7" FWVGA slider</d:name>
+        <d:id>3.7 FWVGA slider</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>3.7</d:diagonal-length>
+                <d:pixel-density>hdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>480</d:x-dimension>
+                    <d:y-dimension>854</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>265</d:xdpi>
+                <d:ydpi>265</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>qwerty</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape, closed">
+            <d:description>The phone in landscape view with the keyboard closed</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyshidden</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape, open">
+            <d:description>The phone in landscape view with the keyboard open</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keysexposed</d:keyboard-state>
+            <d:nav-state>navexposed</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>4" WVGA (Nexus S)</d:name>
+        <d:id>4in WVGA (Nexus S)</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>4.0</d:diagonal-length>
+                <d:pixel-density>hdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>480</d:x-dimension>
+                    <d:y-dimension>800</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>235</d:xdpi>
+                <d:ydpi>235</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>4.65" 720p (Galaxy Nexus)</d:name>
+        <d:id>4.65in 720p (Galaxy Nexus)</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>4.65</d:diagonal-length> <!-- In inches -->
+                <d:pixel-density>xhdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>720</d:x-dimension>
+                    <d:y-dimension>1280</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>316</d:xdpi>
+                <d:ydpi>316</d:ydpi>
+                <d:touch>
+                    <d:multitouch>jazz-hands</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>false</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="GiB">1</d:ram>
+            <d:buttons>soft</d:buttons>
+            <d:internal-storage unit="GiB">16</d:internal-storage>
+            <d:removable-storage unit="KiB"></d:removable-storage>
+            <d:cpu>OMAP 4460</d:cpu> <!-- cpu type (Tegra3) freeform -->
+            <d:gpu>PowerVR SGX540</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+            </d:abi>
+            <!--dock (car, desk, tv, none)-->
+            <d:dock>
+                car
+                desk
+            </d:dock>
+            <!-- plugged in (never, charge, always) -->
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+        <d:software>
+            <d:api-level>14-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles>
+                HSP
+                HFP
+                SPP
+                A2DP
+                AVRCP
+                OPP
+                PBAP
+                GAVDP
+                AVDTP
+                HID
+                HDP
+                PAN
+            </d:bluetooth-profiles>
+            <d:gl-version>2.0</d:gl-version>
+            <!--
+             These can be gotten via
+             javax.microedition.khronos.opengles.GL10.glGetString(GL10.GL_EXTENSIONS);
+            -->
+            <d:gl-extensions>
+                GL_EXT_discard_framebuffer
+                GL_EXT_multi_draw_arrays
+                GL_EXT_shader_texture_lod
+                GL_EXT_texture_format_BGRA8888
+                GL_IMG_multisampled_render_to_texture
+                GL_IMG_program_binary
+                GL_IMG_read_format
+                GL_IMG_shader_binary
+                GL_IMG_texture_compression_pvrtc
+                GL_IMG_texture_format_BGRA8888
+                GL_IMG_texture_npot
+                GL_OES_compressed_ETC1_RGB8_texture
+                GL_OES_depth_texture
+                GL_OES_depth24
+                GL_OES_EGL_image
+                GL_OES_EGL_image_external
+                GL_OES_egl_sync
+                GL_OES_element_index_uint
+                GL_OES_fragment_precision_high
+                GL_OES_get_program_binary
+                GL_OES_mapbuffer
+                GL_OES_packed_depth_stencil
+                GL_OES_required_internalformat
+                GL_OES_rgb8_rgba8
+                GL_OES_standard_derivatives
+                GL_OES_texture_float
+                GL_OES_texture_half_float
+                GL_OES_vertex_array_object
+                GL_OES_vertex_half_float
+            </d:gl-extensions>
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>nonav</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>4.7" WXGA</d:name>
+        <d:id>4.7in WXGA</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>normal</d:screen-size>
+                <d:diagonal-length>4.7</d:diagonal-length>
+                <d:pixel-density>xhdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>1280</d:x-dimension>
+                    <d:y-dimension>720</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>320</d:xdpi>
+                <d:ydpi>320</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>5.1" WVGA</d:name>
+        <d:id>5.1in WVGA</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>large</d:screen-size>
+                <d:diagonal-length>5.1</d:diagonal-length>
+                <d:pixel-density>mdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>480</d:x-dimension>
+                    <d:y-dimension>800</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>183</d:xdpi>
+                <d:ydpi>183</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>5.4" FWVGA</d:name>
+        <d:id>5.4in FWVGA</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>large</d:screen-size>
+                <d:diagonal-length>5.4</d:diagonal-length>
+                <d:pixel-density>mdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>480</d:x-dimension>
+                    <d:y-dimension>854</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>181</d:xdpi>
+                <d:ydpi>181</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>hard</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+    </d:device>
+
+    <d:device>
+        <d:name>7" WSVGA (Tablet)</d:name>
+        <d:id>7in WSVGA (Tablet)</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>large</d:screen-size>
+                <d:diagonal-length>7.0</d:diagonal-length>
+                <d:pixel-density>mdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>1024</d:x-dimension>
+                    <d:y-dimension>600</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>169</d:xdpi>
+                <d:ydpi>169</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>soft</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+    </d:device>
+
+
+    <d:device>
+        <d:name>10.1" WXGA (Tablet)</d:name>
+        <d:id>10.1in WXGA (Tablet)</d:id>
+        <d:manufacturer>
+            Generic
+        </d:manufacturer>
+        <d:hardware>
+            <d:screen>
+                <d:screen-size>xlarge</d:screen-size>
+                <d:diagonal-length>10.1</d:diagonal-length>
+                <d:pixel-density>mdpi</d:pixel-density>
+                <d:screen-ratio>long</d:screen-ratio>
+                <d:dimensions>
+                    <d:x-dimension>1280</d:x-dimension>
+                    <d:y-dimension>800</d:y-dimension>
+                </d:dimensions>
+                <d:xdpi>149</d:xdpi>
+                <d:ydpi>149</d:ydpi>
+                <d:touch>
+                    <d:multitouch>distinct</d:multitouch>
+                    <d:mechanism>finger</d:mechanism>
+                    <d:screen-type>capacitive</d:screen-type>
+                </d:touch>
+            </d:screen>
+            <d:networking>
+                Bluetooth
+                Wifi
+                NFC
+            </d:networking>
+            <d:sensors>
+                Accelerometer
+                Barometer
+                Gyroscope
+                Compass
+                GPS
+                ProximitySensor
+            </d:sensors>
+            <d:mic>true</d:mic>
+            <d:camera>
+                <d:location>front</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:camera>
+                <d:location>back</d:location>
+                <d:autofocus>true</d:autofocus>
+                <d:flash>true</d:flash>
+            </d:camera>
+            <d:keyboard>nokeys</d:keyboard>
+            <d:nav>nonav</d:nav>
+            <d:ram unit="MiB">512</d:ram>
+            <d:buttons>soft</d:buttons>
+            <d:internal-storage unit="GiB">8</d:internal-storage>
+            <d:removable-storage unit="MiB"></d:removable-storage>
+            <d:cpu>OMAP 9001</d:cpu>
+            <d:gpu>Ultra Nexus 3D S++</d:gpu>
+            <d:abi>
+                armeabi
+                armeabi-v7a
+                mips
+                x86
+            </d:abi>
+            <d:dock>
+                car
+                television
+                desk
+            </d:dock>
+            <d:power-type>battery</d:power-type>
+        </d:hardware>
+
+        <d:software>
+            <d:api-level>-</d:api-level>
+            <d:live-wallpaper-support>true</d:live-wallpaper-support>
+            <d:bluetooth-profiles />
+            <d:gl-version>2.1</d:gl-version>
+            <d:gl-extensions />
+            <d:status-bar>true</d:status-bar>
+        </d:software>
+
+        <d:state name="Portrait" default="true">
+            <d:description>The phone in portrait view</d:description>
+            <d:screen-orientation>port</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+        <d:state name="Landscape">
+            <d:description>The phone in landscape view</d:description>
+            <d:screen-orientation>land</d:screen-orientation>
+            <d:keyboard-state>keyssoft</d:keyboard-state>
+            <d:nav-state>navhidden</d:nav-state>
+        </d:state>
+    </d:device>
+</d:devices>

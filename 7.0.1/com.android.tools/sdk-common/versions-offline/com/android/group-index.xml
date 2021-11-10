@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android>
+  <signflinger versions="3.6.4,4.1.3,7.0.0-alpha14"/>
+  <zipflinger versions="3.6.4,4.1.3,7.0.0-alpha14"/>
+</com.android>
+

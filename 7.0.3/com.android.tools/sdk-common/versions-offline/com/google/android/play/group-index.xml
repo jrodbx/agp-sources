@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.android.play>
+  <core versions="1.10.0"/>
+  <core-ktx versions="1.8.1"/>
+</com.google.android.play>
+

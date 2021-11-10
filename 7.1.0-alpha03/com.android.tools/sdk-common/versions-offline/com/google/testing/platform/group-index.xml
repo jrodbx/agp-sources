@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.testing.platform>
+  <android-device-controller-adb versions="0.0.4-dev"/>
+  <android-device-provider-gradle versions="0.0.8-alpha04"/>
+  <android-device-provider-local versions="0.0.8-alpha04"/>
+  <android-device-provider-virtual versions="0.0.6-dev"/>
+  <android-driver-instrumentation versions="0.0.8-alpha04"/>
+  <android-test-plugin versions="0.0.8-alpha04"/>
+  <android-test-plugin-host-device-info versions="0.0.8-alpha04"/>
+  <android-test-plugin-host-retention versions="0.0.8-alpha04"/>
+  <core versions="0.0.8-alpha04"/>
+  <core-proto versions="0.0.8-alpha04"/>
+  <launcher versions="0.0.8-alpha04"/>
+</com.google.testing.platform>
+

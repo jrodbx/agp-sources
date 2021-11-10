@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.mlkit>
+  <barcode-scanning versions="16.2.0"/>
+  <camera versions="16.0.0-beta1"/>
+  <common versions="16.1.0,17.2.0"/>
+  <digital-ink-recognition versions="16.2.0,17.0.0"/>
+  <entity-extraction versions="16.0.0-beta2"/>
+  <face-detection versions="16.1.2"/>
+  <image-labeling versions="16.2.0,17.0.5"/>
+  <image-labeling-automl versions="16.2.1"/>
+  <image-labeling-common versions="16.2.1,17.1.0"/>
+  <image-labeling-custom versions="16.3.1"/>
+  <image-labeling-default-common versions="16.0.1"/>
+  <language-id versions="16.1.1"/>
+  <linkfirebase versions="16.1.1"/>
+  <mediapipe-internal versions="16.0.0,17.0.0-beta2"/>
+  <object-detection versions="16.2.6"/>
+  <object-detection-common versions="16.2.1,17.1.0"/>
+  <object-detection-custom versions="16.3.3"/>
+  <playstore-dynamic-feature-support versions="16.0.0-beta1"/>
+  <pose-detection versions="16.0.0,17.0.0,17.0.1-beta4"/>
+  <pose-detection-accurate versions="17.0.0,17.0.1-beta4"/>
+  <pose-detection-common versions="17.0.0,17.1.0-beta3"/>
+  <segmentation-selfie versions="16.0.0-beta2"/>
+  <smart-reply versions="16.1.1"/>
+  <translate versions="16.1.2"/>
+  <vision-common versions="16.5.0"/>
+  <vision-internal-vkp versions="17.0.1,18.1.1"/>
+</com.google.mlkit>
+

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.sqlite>
+  <sqlite versions="2.1.0,2.2.0-alpha01"/>
+  <sqlite-framework versions="2.1.0,2.2.0-alpha01"/>
+  <sqlite-ktx versions="2.1.0,2.2.0-alpha01"/>
+</androidx.sqlite>
+

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.tools.utp>
+  <android-device-provider-ddmlib versions="30.0.0-alpha14"/>
+  <android-device-provider-gradle versions="30.0.0-alpha14"/>
+  <android-device-provider-gradle-proto versions="30.0.0-alpha14"/>
+  <android-test-plugin-host-device-info versions="30.0.0-alpha14"/>
+  <android-test-plugin-host-device-info-proto versions="30.0.0-alpha14"/>
+  <android-test-plugin-host-retention versions="30.0.0-alpha14"/>
+  <android-test-plugin-host-retention-proto versions="30.0.0-alpha14"/>
+  <android-test-plugin-result-listener-gradle versions="30.0.0-alpha14"/>
+  <android-test-plugin-result-listener-gradle-proto versions="30.0.0-alpha14"/>
+</com.android.tools.utp>
+

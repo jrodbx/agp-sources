@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.recyclerview>
+  <recyclerview versions="1.2.0"/>
+  <recyclerview-selection versions="1.1.0"/>
+</androidx.recyclerview>
+

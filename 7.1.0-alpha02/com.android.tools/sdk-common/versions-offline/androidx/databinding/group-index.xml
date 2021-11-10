@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.databinding>
+  <adapters versions="3.2.0-alpha11"/>
+  <baseLibrary versions="3.2.0-alpha11"/>
+  <compiler versions="3.2.0-alpha11"/>
+  <compilerCommon versions="3.2.0-alpha11"/>
+  <databinding-adapters versions="3.6.4,4.1.3,7.0.0-alpha14"/>
+  <databinding-common versions="3.6.4,4.1.3,7.0.0-alpha14"/>
+  <databinding-compiler versions="3.6.4,4.1.3,7.0.0-alpha14"/>
+  <databinding-compiler-common versions="3.6.4,4.1.3,7.0.0-alpha14"/>
+  <databinding-ktx versions="7.0.0-alpha14"/>
+  <databinding-runtime versions="3.6.4,4.1.3,7.0.0-alpha14"/>
+  <library versions="3.2.0-alpha11"/>
+  <viewbinding versions="3.6.4,4.1.3,7.0.0-alpha14"/>
+</androidx.databinding>
+
