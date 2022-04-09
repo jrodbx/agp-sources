@@ -1,52 +1,65 @@
 /**
- * 1) Change agpVersion
+ * 1) Update agpVersions with range of desired versions
  * 2) Run './gradlew dumpSources'
  * 3) Check changeset into source control
  */
-def agpVersion = '7.2.0-alpha04'
+def agpVersions = ['7.1.3']
 
 repositories {
   google()
   jcenter()
 }
 
-configurations {
-  agp
-}
+// anchor task
+def dumpSources = tasks.register("dumpSources")
 
-dependencies {
-  agp "com.android.tools.build:gradle:${agpVersion}"
-}
+agpVersions.forEach { agpVersion ->
+  // create configuration for specific version of AGP
+	def agpConfiguration = configurations.create("agp${version}")
+  configurations.add(agpConfiguration)
 
-task dumpSources {
-  inputs.files configurations.agp
-  outputs.dir "$agpVersion/"
+	// add that version of AGP as a dependency to this configuration
+	agpConfiguration.dependencies.add(
+    dependencies.create("com.android.tools.build:gradle:${version}")
+  )
 
-  doLast {
-    def componentIds = configurations.agp.incoming.resolutionResult.allDependencies
-        .findAll { it.selected.id.group.startsWith('com.android.tools') }
-        .collect { it.selected.id }
-        .toSet()
-    ArtifactResolutionResult result = dependencies.createArtifactResolutionQuery()
-        .forComponents(componentIds)
-        .withArtifacts(JvmLibrary, SourcesArtifact)
-        .execute()
-    result.resolvedComponents.each { ComponentArtifactsResult component ->
-      Set<ArtifactResult> sources = component.getArtifacts(SourcesArtifact)
-      sources.each { ArtifactResult ar ->
-        println "Found ${ar.file}."
-        if (ar instanceof ResolvedArtifactResult) {
-          def group = ar.id.componentIdentifier.group
-          def module = ar.id.componentIdentifier.module
-          def version = ar.id.componentIdentifier.version
-          println "Extracting to $agpVersion/$group/$module."
-          copy {
-            from zipTree(ar.file)
-            into file("$agpVersion/$group/$module")
+  // create a task dedicated to extracting sources for that version
+  def agpDumpSources = tasks.register("dump${agpVersion}Sources") {
+    inputs.files configurations.getByName("agp${agpVersion}")
+    outputs.dir "$agpVersion/"
+
+    doLast {
+      def componentIds = configurations.getByName("agp${agpVersion}")
+			    .incoming
+				  .resolutionResult
+				  .allDependencies
+          .findAll { it.selected.id.group.startsWith('com.android.tools') }
+          .collect { it.selected.id }
+          .toSet()
+      ArtifactResolutionResult result = dependencies.createArtifactResolutionQuery()
+          .forComponents(componentIds)
+          .withArtifacts(JvmLibrary, SourcesArtifact)
+          .execute()
+      result.resolvedComponents.each { ComponentArtifactsResult component ->
+        Set<ArtifactResult> sources = component.getArtifacts(SourcesArtifact)
+        sources.each { ArtifactResult ar ->
+          println "Found ${ar.file}."
+          if (ar instanceof ResolvedArtifactResult) {
+            def group = ar.id.componentIdentifier.group
+            def module = ar.id.componentIdentifier.module
+            def version = ar.id.componentIdentifier.version
+            println "Extracting to $agpVersion/$group/$module."
+            copy {
+              from zipTree(ar.file)
+              into file("$agpVersion/$group/$module")
+            }
+            println "Done extracting $module."
           }
-          println "Done extracting $module."
         }
       }
     }
   }
+
+  // hook anchor task to all version-specific tasks
+	dumpSources.configure { it.dependsOn(agpDumpSources) }
 }
