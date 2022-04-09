@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<androidx.constraintlayout>
-  <constraintlayout versions="1.1.3,2.0.4,2.1.0-beta02"/>
-  <constraintlayout-compose versions="1.0.0-alpha08"/>
-  <constraintlayout-core versions="1.0.0-beta03"/>
-  <constraintlayout-solver versions="1.1.3,2.0.4"/>
-</androidx.constraintlayout>
-

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<androidx.camera>
-  <camera-core versions="1.0.0-alpha07"/>
-  <camera-camera2 versions="1.0.0-alpha07"/>
-  <camera-view versions="1.0.0-alpha04"/>
-  <camera-extensions versions="1.0.0-alpha04"/>
-  <camera-lifecycle versions="1.0.0-alpha01"/>
-</androidx.camera>
-

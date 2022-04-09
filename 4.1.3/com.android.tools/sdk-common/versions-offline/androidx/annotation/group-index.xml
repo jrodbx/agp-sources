@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<androidx.annotation>
-  <annotation versions="1.1.0"/>
-  <annotation-experimental versions="1.0.0"/>
-  <annotation-experimental-lint versions="1.0.0"/>
-</androidx.annotation>
-

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.ads>
+  <ads-identifier versions="1.0.0-alpha04"/>
+  <ads-identifier-common versions="1.0.0-alpha04"/>
+  <ads-identifier-provider versions="1.0.0-alpha04"/>
+</androidx.ads>
+

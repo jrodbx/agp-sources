@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<androidx.core>
+  <core versions="1.6.0,1.7.0-alpha01"/>
+  <core-animation versions="1.0.0-alpha02"/>
+  <core-animation-testing versions="1.0.0-alpha02"/>
+  <core-google-shortcuts versions="1.0.0"/>
+  <core-ktx versions="0.3,1.6.0,1.7.0-alpha01"/>
+  <core-role versions="1.0.0,1.1.0-alpha01"/>
+  <core-splashscreen versions="1.0.0-alpha01"/>
+</androidx.core>
+

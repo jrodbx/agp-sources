@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<androidx.activity>
-  <activity-ktx versions="1.0.0,1.1.0-rc03"/>
-  <activity versions="1.0.0,1.1.0-rc03"/>
-</androidx.activity>
-

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.android.java.tools.build>
+  <java-lib-model versions="3.5.4,3.6.0-alpha04"/>
+  <java-lib-model-builder versions="3.5.4,3.6.0-alpha04"/>
+</com.android.java.tools.build>
+

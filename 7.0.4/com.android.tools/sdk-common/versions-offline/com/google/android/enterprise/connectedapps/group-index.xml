@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.google.android.enterprise.connectedapps>
+  <connectedapps versions="1.0.0-alpha04"/>
+  <connectedapps-annotations versions="1.0.0-alpha04"/>
+  <connectedapps-processor versions="1.0.0-alpha04"/>
+  <connectedapps-testing versions="1.0.0-alpha04"/>
+  <connectedapps-testing-annotations versions="1.0.0-alpha04"/>
+</com.google.android.enterprise.connectedapps>
+
