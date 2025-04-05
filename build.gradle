@@ -1,19 +1,21 @@
+import org.gradle.api.attributes.java.TargetJvmEnvironment
+
 /**
  * 1) Update agpVersions with range of desired versions
  * 2) Run './gradlew dumpSources'
  * 3) Check changeset into source control
  */
+
+// https://mvnrepository.com/artifact/com.android.tools.build/gradle
 def agpVersions = [
-    "8.7.1",
-    "8.7.2",
-    "8.8.0-alpha05",
-    "8.8.0-alpha06",
-    "8.8.0-alpha07",
-    "8.8.0-alpha08",
-    "8.8.0-alpha09",
-    "8.8.0-beta01",
-    "8.9.0-alpha01",
-    "8.9.0-alpha02",
+    "8.7.3",
+    "8.8.0",
+    "8.8.1",
+    "8.8.2",
+    "8.9.0",
+    "8.9.1",
+    "8.10.0-rc01",
+    "8.11.0-alpha03",
 ]
 
 repositories {
@@ -26,7 +28,14 @@ def dumpSources = tasks.register("dumpSources")
 
 agpVersions.forEach { agpVersion ->
   // create configuration for specific version of AGP
-	def agpConfiguration = configurations.create("agp${agpVersion}")
+  def agpConfiguration = configurations.create("agp${agpVersion}") {
+    // TODO: https://github.com/google/guava/issues/6801
+    //  Fix `Cannot choose between the following variants of com.google.guava:guava:33.3.1-jre: androidRuntimeElements, jreRuntimeElements`.
+    attributes.attribute(
+      TargetJvmEnvironment.TARGET_JVM_ENVIRONMENT_ATTRIBUTE,
+      objects.named(TargetJvmEnvironment, TargetJvmEnvironment.STANDARD_JVM),
+    )
+  }
   configurations.add(agpConfiguration)
 
 	// add that version of AGP as a dependency to this configuration
