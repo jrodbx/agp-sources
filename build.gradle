@@ -9,8 +9,8 @@ import org.gradle.api.attributes.java.TargetJvmEnvironment
 // https://mvnrepository.com/artifact/com.android.tools.build/gradle
 def agpVersions = [
     "8.9.2",
-    "8.10.0-rc02",
-    "8.11.0-alpha06",
+    "8.10.0",
+    "8.11.0-alpha09",
 ]
 
 // anchor task
