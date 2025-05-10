@@ -13,11 +13,6 @@ def agpVersions = [
     "8.11.0-alpha06",
 ]
 
-repositories {
-  google()
-  jcenter()
-}
-
 // anchor task
 def dumpSources = tasks.register("dumpSources")
 
