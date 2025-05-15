@@ -21,9 +21,10 @@ def agpVersions = [
 ]
 
 dependencies {
-    // Make sure they could be updated by Renovate automatically.
-    compileOnly "com.android.tools.build:gradle:$agpStable"
-    compileOnly "com.android.tools.build:gradle:$agpAlpha"
+    // Use different artifact to make sure the stable and alpha versions could be updated by Renovate automatically.
+    compileOnly "com.android.tools.build:gradle-api:$agpStable"
+    // apksig is followed by the same version as AGP.
+    compileOnly "com.android.tools.build:apksig:$agpAlpha"
 }
 
 // anchor task
