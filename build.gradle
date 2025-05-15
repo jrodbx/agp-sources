@@ -10,7 +10,7 @@ plugins {
  * 3) Check changeset into source control
  */
 
-def agpStable = "8.9.2"
+def agpStable = "8.10.0"
 def agpAlpha = "8.11.0-alpha06"
 
 // https://mvnrepository.com/artifact/com.android.tools.build/gradle
