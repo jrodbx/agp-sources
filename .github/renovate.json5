@@ -3,18 +3,28 @@
   "extends": [
     "config:recommended",
   ],
+  "ignoreUnstable": false,
   "packageRules": [
+    {
+      "matchManagers": [
+        "gradle-wrapper"
+      ],
+      // Update Gradle self to the latest stable version.
+      "allowedVersions": "/^[0-9]+\\.[0-9]+(\\.[0-9]+)?\$/",
+    },
     {
       "matchPackageNames": [
         "com.android.tools.build:gradle-api",
       ],
-      "allowedVersions": "^[0-9]+\\.[0-9]+(\\.[0-9]+)?$",
+      // Update it to the latest stable version.
+      "allowedVersions": "/^[0-9]+\\.[0-9]+(\\.[0-9]+)?\$/",
     },
     {
       "matchPackageNames": [
         "com.android.tools.build:apksig",
       ],
-      "allowedVersions": ".*-alpha.*",
-    }
+      // Update it to the latest alpha version.
+      "allowedVersions": "/.*-alpha.*/",
+    },
   ],
 }
