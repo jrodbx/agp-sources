@@ -1,21 +1,30 @@
 import org.gradle.api.attributes.java.TargetJvmEnvironment
 
+plugins {
+    id 'java'
+}
+
 /**
  * 1) Update agpVersions with range of desired versions
  * 2) Run './gradlew dumpSources'
  * 3) Check changeset into source control
  */
 
+def agpStable = "8.10.1"
+// Divider for Renovate updates.
+def agpAlpha = "8.12.0-alpha05"
+
 // https://mvnrepository.com/artifact/com.android.tools.build/gradle
 def agpVersions = [
-    "8.9.2",
-    "8.10.0-rc02",
-    "8.11.0-alpha06",
+    agpStable,
+    agpAlpha,
 ]
 
-repositories {
-  google()
-  jcenter()
+dependencies {
+    // Use different artifact to make sure the stable and alpha versions could be updated by Renovate automatically.
+    compileOnly "com.android.tools.build:gradle-api:$agpStable"
+    // apksig is followed by the same version as AGP.
+    compileOnly "com.android.tools.build:apksig:$agpAlpha"
 }
 
 // anchor task
