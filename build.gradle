@@ -79,7 +79,6 @@ agpVersions.forEach { agpVersion ->
       objects.named(TargetJvmEnvironment, TargetJvmEnvironment.STANDARD_JVM),
     )
   }
-  configurations.add(agpConfiguration)
 
 	// add that version of AGP as a dependency to this configuration
 	agpConfiguration.dependencies.add(
