@@ -1,5 +1,7 @@
 import org.gradle.api.attributes.java.TargetJvmEnvironment
 
+import static org.gradle.kotlin.dsl.KotlinDependencyExtensionsKt.getEmbeddedKotlinVersion
+
 plugins {
     id 'java'
 }
@@ -20,11 +22,48 @@ def agpVersions = [
     agpAlpha,
 ]
 
+// Match all directories that look like version numbers, e.g. 8.11.1, 8.13.0-alpha02.
+def versionDirPattern = ~/^\d+\.\d+\.\d+(-alpha\d+)?$/
+
+rootDir.listFiles()
+        .findAll { it.isDirectory() && it.name ==~ versionDirPattern }
+        .each { dir ->
+            sourceSets.create(dir.name) {
+                java.srcDir dir
+            }
+        }
+
+def shared = configurations.create('shared') {
+    canBeResolved = true
+    description = "Shared configuration for all source sets."
+}
+
+configurations.configureEach {
+    if (it.name != shared.name) {
+        it.extendsFrom(shared)
+    }
+}
+
+def agpStableDependencies = configurations.detachedConfiguration(
+    dependencies.create("com.android.tools.build:gradle:$agpStable")
+)
+
 dependencies {
     // Use different artifact to make sure the stable and alpha versions could be updated by Renovate automatically.
     compileOnly "com.android.tools.build:gradle-api:$agpStable"
     // apksig is followed by the same version as AGP.
     compileOnly "com.android.tools.build:apksig:$agpAlpha"
+
+    add(shared.name, gradleApi())
+    add(shared.name, "org.jetbrains.kotlin:kotlin-gradle-plugin:$embeddedKotlinVersion")
+
+    // Add all AGP dependencies but the AGP itself.
+    agpStableDependencies.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+        def id = artifact.moduleVersion.id
+        if (!id.group.startsWith('com.android')) {
+            add(shared.name, "${id.group}:${id.name}:${id.version}")
+        }
+    }
 }
 
 // anchor task

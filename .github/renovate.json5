@@ -14,6 +14,7 @@
     },
     {
       "matchPackageNames": [
+        "com.android.tools.build:gradle",
         "com.android.tools.build:gradle-api",
       ],
       // Update it to the latest stable version.
