@@ -14,7 +14,7 @@ plugins {
 
 def agpStable = "8.11.1"
 // Divider for Renovate updates.
-def agpAlpha = "8.13.0-alpha02"
+def agpAlpha = "8.13.0-alpha03"
 
 // https://mvnrepository.com/artifact/com.android.tools.build/gradle
 def agpVersions = [
