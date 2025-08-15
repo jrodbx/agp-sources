@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import static org.gradle.kotlin.dsl.KotlinDependencyExtensionsKt.getEmbeddedKotlinVersion
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version "$embeddedKotlinVersion"
+  id 'org.jetbrains.kotlin.jvm' version "$embeddedKotlinVersion"
 }
 
 /**
@@ -19,56 +19,56 @@ def agpAlpha = "9.0.0-alpha01"
 
 // https://mvnrepository.com/artifact/com.android.tools.build/gradle
 def agpVersions = [
-    agpStable,
-    agpAlpha,
+  agpStable,
+  agpAlpha,
 ]
 
 // Match all directories that look like version numbers, e.g. 8.11.1, 8.13.0-alpha02.
 def versionDirPattern = ~/^\d+\.\d+\.\d+(-alpha\d+)?$/
 
 rootDir.listFiles()
-        .findAll { it.isDirectory() && it.name ==~ versionDirPattern }
-        .each { dir ->
-            sourceSets.create(dir.name) {
-                java.srcDir dir
-            }
-        }
+  .findAll { it.isDirectory() && it.name ==~ versionDirPattern }
+  .each { dir ->
+    sourceSets.create(dir.name) {
+      java.srcDir dir
+    }
+  }
 
 def shared = configurations.create('shared') {
-    canBeResolved = true
-    description = "Shared configuration for all source sets."
+  canBeResolved = true
+  description = "Shared configuration for all source sets."
 }
 
 configurations.configureEach {
-    if (it.name != shared.name) {
-        it.extendsFrom(shared)
-    }
+  if (it.name != shared.name) {
+    it.extendsFrom(shared)
+  }
 }
 
 def agpStableDependencies = configurations.detachedConfiguration(
-    dependencies.create("com.android.tools.build:gradle:$agpStable")
+  dependencies.create("com.android.tools.build:gradle:$agpStable")
 )
 
 dependencies {
-    // Use different artifact to make sure the stable and alpha versions could be updated by Renovate automatically.
-    compileOnly "com.android.tools.build:gradle-api:$agpStable"
-    // apksig is followed by the same version as AGP.
-    compileOnly "com.android.tools.build:apksig:$agpAlpha"
+  // Use different artifact to make sure the stable and alpha versions could be updated by Renovate automatically.
+  compileOnly "com.android.tools.build:gradle-api:$agpStable"
+  // apksig is followed by the same version as AGP.
+  compileOnly "com.android.tools.build:apksig:$agpAlpha"
 
-    add(shared.name, gradleApi())
+  add(shared.name, gradleApi())
 
-    // Add all AGP dependencies but the AGP itself.
-    agpStableDependencies.resolvedConfiguration.resolvedArtifacts.each { artifact ->
-        def id = artifact.moduleVersion.id
-        if (!id.group.startsWith('com.android')) {
-            add(shared.name, "${id.group}:${id.name}:${id.version}")
-        }
+  // Add all AGP dependencies but the AGP itself.
+  agpStableDependencies.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+    def id = artifact.moduleVersion.id
+    if (!id.group.startsWith('com.android')) {
+      add(shared.name, "${id.group}:${id.name}:${id.version}")
     }
+  }
 }
 
 tasks.withType(KotlinCompile).configureEach {
-    // We need KGP to configure Kotlin stuff, the source sets can't be compiled successfully.
-    enabled = false
+  // We need KGP to configure Kotlin stuff, the source sets can't be compiled successfully.
+  enabled = false
 }
 
 // anchor task
@@ -85,8 +85,8 @@ agpVersions.forEach { agpVersion ->
     )
   }
 
-	// add that version of AGP as a dependency to this configuration
-	agpConfiguration.dependencies.add(
+  // add that version of AGP as a dependency to this configuration
+  agpConfiguration.dependencies.add(
     dependencies.create("com.android.tools.build:gradle:${agpVersion}")
   )
 
@@ -97,16 +97,16 @@ agpVersions.forEach { agpVersion ->
 
     doLast {
       def componentIds = configurations.getByName("agp${agpVersion}")
-			    .incoming
-				  .resolutionResult
-				  .allDependencies
-          .findAll { it.selected.id.group.startsWith('com.android.tools') }
-          .collect { it.selected.id }
-          .toSet()
+        .incoming
+        .resolutionResult
+        .allDependencies
+        .findAll { it.selected.id.group.startsWith('com.android.tools') }
+        .collect { it.selected.id }
+        .toSet()
       ArtifactResolutionResult result = dependencies.createArtifactResolutionQuery()
-          .forComponents(componentIds)
-          .withArtifacts(JvmLibrary, SourcesArtifact)
-          .execute()
+        .forComponents(componentIds)
+        .withArtifacts(JvmLibrary, SourcesArtifact)
+        .execute()
       result.resolvedComponents.each { ComponentArtifactsResult component ->
         Set<ArtifactResult> sources = component.getArtifacts(SourcesArtifact)
         sources.each { ArtifactResult ar ->
@@ -128,5 +128,5 @@ agpVersions.forEach { agpVersion ->
   }
 
   // hook anchor task to all version-specific tasks
-	dumpSources.configure { it.dependsOn(agpDumpSources) }
+  dumpSources.configure { it.dependsOn(agpDumpSources) }
 }
