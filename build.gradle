@@ -1,9 +1,10 @@
 import org.gradle.api.attributes.java.TargetJvmEnvironment
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 import static org.gradle.kotlin.dsl.KotlinDependencyExtensionsKt.getEmbeddedKotlinVersion
 
 plugins {
-    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version "$embeddedKotlinVersion"
 }
 
 /**
@@ -55,7 +56,6 @@ dependencies {
     compileOnly "com.android.tools.build:apksig:$agpAlpha"
 
     add(shared.name, gradleApi())
-    add(shared.name, "org.jetbrains.kotlin:kotlin-gradle-plugin:$embeddedKotlinVersion")
 
     // Add all AGP dependencies but the AGP itself.
     agpStableDependencies.resolvedConfiguration.resolvedArtifacts.each { artifact ->
@@ -64,6 +64,11 @@ dependencies {
             add(shared.name, "${id.group}:${id.name}:${id.version}")
         }
     }
+}
+
+tasks.withType(KotlinCompile).configureEach {
+    // We need KGP to configure Kotlin stuff, the source sets can't be compiled successfully.
+    enabled = false
 }
 
 // anchor task
