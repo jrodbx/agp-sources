@@ -1,8 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-import org.gradle.api.internal.artifacts.result.DefaultResolvedDependencyResult
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
   kotlin("jvm") version embeddedKotlinVersion
 }
@@ -38,21 +35,19 @@ configurations.configureEach {
   }
 }
 
+val agpGroupPrefix = "com.android.tools"
+
 dependencies {
   shared(gradleApi())
 
   // Add all AGP dependencies but the AGP itself.
-  configurations.detachedConfiguration(dependencies.create(stable.agp.get()))
+  configurations.detachedConfiguration(create(stable.agp.get()))
     .resolvedConfiguration.resolvedArtifacts.forEach { artifact ->
-      val id = artifact.moduleVersion.id
-      if (artifact.moduleVersion.id.group.startsWith("com.android")) return@forEach
-      shared("${id.group}:${id.name}:${id.version}")
+      with(artifact.moduleVersion.id) {
+        if (group.startsWith(agpGroupPrefix)) return@forEach
+        shared("$group:$name:$version")
+      }
     }
-}
-
-tasks.withType<KotlinCompile>().configureEach {
-  // We need KGP to configure Kotlin stuff, the source sets can't be compiled successfully.
-  enabled = false
 }
 
 // Anchor task.
@@ -77,46 +72,44 @@ listOf(
   }
 
   // Add that version of AGP as a dependency to this configuration.
-  agpConfiguration.dependencies.add(
-    dependencies.create(agp.get())
-  )
+  agpConfiguration.dependencies.add(dependencies.create(agp.get()))
 
   // Create a task dedicated to extracting sources for that version.
-  val agpDumpSources = tasks.register<Copy>("dump${agpVersion}Sources") {
+  val dumpSingleAgpSources = tasks.register<Copy>("dump${agpVersion}Sources") {
     inputs.files(agpConfiguration)
-    into(agpVersion)
+    into(layout.projectDirectory.dir(agpVersion))
+    // There should be no duplicates in sources, so fail if any are found.
+    duplicatesStrategy = DuplicatesStrategy.FAIL
 
     val componentIds = agpConfiguration
       .incoming
       .resolutionResult
       .allDependencies
-      .filterIsInstance<DefaultResolvedDependencyResult>()
-      .filter { (it.selected.id as ModuleComponentIdentifier).group.startsWith("com.android.tools") }
+      .filterIsInstance<ResolvedDependencyResult>()
       .map { it.selected.id }
+      .filterIsInstance<ModuleComponentIdentifier>()
+      .filter { it.group.startsWith(agpGroupPrefix) }
       .toSet()
 
-    val result = dependencies.createArtifactResolutionQuery()
+    dependencies
+      .createArtifactResolutionQuery()
       .forComponents(componentIds)
       .withArtifacts(JvmLibrary::class.java, SourcesArtifact::class.java)
       .execute()
-
-    result.resolvedComponents.forEach { component ->
-      component.getArtifacts(SourcesArtifact::class.java)
-        .filterIsInstance<ResolvedArtifactResult>()
-        .forEach { ar ->
-          logger.lifecycle("Found ${ar.file}.")
-          val id = ar.id.componentIdentifier as ModuleComponentIdentifier
-          val group = id.group
-          val module = id.module
-          from(zipTree(ar.file)) {
-            into("$group/$module")
-          }
+      .resolvedComponents
+      .flatMap { it.getArtifacts(SourcesArtifact::class.java) }
+      .filterIsInstance<ResolvedArtifactResult>()
+      .forEach {
+        logger.lifecycle("Found sources jar: ${it.file}")
+        val id = it.id.componentIdentifier as ModuleComponentIdentifier
+        from(zipTree(it.file)) {
+          into("${id.group}/${id.module}")
         }
-    }
+      }
   }
 
   // Hook anchor task to all version-specific tasks.
   dumpSources.configure {
-    dependsOn(agpDumpSources)
+    dependsOn(dumpSingleAgpSources)
   }
 }
