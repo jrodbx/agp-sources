@@ -60,17 +60,7 @@ listOf(
 ).forEach { agp ->
   val agpVersion = requireNotNull(agp.get().version)
   // Create configuration for specific version of AGP.
-  val agpConfiguration = configurations.create("agp$agpVersion") {
-    // TODO: https://github.com/google/guava/issues/6801
-    //  Fix `Cannot choose between the following variants of com.google.guava:guava:33.3.1-jre: androidRuntimeElements, jreRuntimeElements`.
-    attributes {
-      attribute(
-        TargetJvmEnvironment.TARGET_JVM_ENVIRONMENT_ATTRIBUTE,
-        objects.named<TargetJvmEnvironment>(TargetJvmEnvironment.STANDARD_JVM),
-      )
-    }
-  }
-
+  val agpConfiguration = configurations.create("agp$agpVersion")
   // Add that version of AGP as a dependency to this configuration.
   agpConfiguration.dependencies.add(dependencies.create(agp.get()))
 
