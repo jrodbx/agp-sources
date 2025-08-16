@@ -108,11 +108,9 @@ listOf(
           val id = ar.id.componentIdentifier as ModuleComponentIdentifier
           val group = id.group
           val module = id.module
-          logger.lifecycle("Extracting to $agpVersion/$group/$module.")
           from(zipTree(ar.file)) {
             into("$group/$module")
           }
-          logger.lifecycle("Done extracting $module.")
         }
     }
   }
