@@ -6,25 +6,24 @@
   "ignoreUnstable": false,
   "packageRules": [
     {
-      "matchManagers": [
-        "gradle-wrapper"
+      // Any other dependencies should be updated to the latest stable version.
+      "matchPackagePatterns": [
+        ".*",
       ],
-      // Update Gradle self to the latest stable version.
       "allowedVersions": "/^[0-9]+\\.[0-9]+(\\.[0-9]+)?\$/",
     },
     {
-      "matchPackageNames": [
-        "com.android.tools.build:gradle",
-        "com.android.tools.build:gradle-api",
+      "matchFileNames": [
+        "gradle/stable.versions.toml",
       ],
-      // Update it to the latest stable version.
+      // Latest stable version.
       "allowedVersions": "/^[0-9]+\\.[0-9]+(\\.[0-9]+)?\$/",
     },
     {
-      "matchPackageNames": [
-        "com.android.tools.build:apksig",
+      "matchFileNames": [
+        "gradle/alpha.versions.toml",
       ],
-      // Update it to the latest alpha version.
+      // Latest alpha version.
       "allowedVersions": "/.*-alpha.*/",
     },
   ],

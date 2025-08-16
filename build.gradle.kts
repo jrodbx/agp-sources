@@ -8,20 +8,10 @@ plugins {
 }
 
 /**
- * 1) Update agpVersions with range of desired versions
+ * 1) Update AGP versions in gradle/xx.versions.toml
  * 2) Run './gradlew dumpSources'
  * 3) Check changeset into source control
  */
-
-val agpStable = "8.12.0"
-// Divider for Renovate updates.
-val agpAlpha = "9.0.0-alpha01"
-
-// https://mvnrepository.com/artifact/com.android.tools.build/gradle
-val agpVersions = listOf(
-  agpStable,
-  agpAlpha,
-)
 
 // Match all directories that look like version numbers, e.g. 8.11.1, 8.13.0-alpha02.
 val versionDirPattern = """
@@ -48,25 +38,16 @@ configurations.configureEach {
   }
 }
 
-val agpStableDependencies = configurations.detachedConfiguration(
-  dependencies.create("com.android.tools.build:gradle:$agpStable")
-)
-
 dependencies {
-  // Use different artifact to make sure the stable and alpha versions could be updated by Renovate automatically.
-  compileOnly("com.android.tools.build:gradle-api:$agpStable")
-  // apksig is followed by the same version as AGP.
-  compileOnly("com.android.tools.build:apksig:$agpAlpha")
-
   shared(gradleApi())
 
   // Add all AGP dependencies but the AGP itself.
-  agpStableDependencies.resolvedConfiguration.resolvedArtifacts.forEach { artifact ->
-    val id = artifact.moduleVersion.id
-    if (!id.group.startsWith("com.android")) {
+  configurations.detachedConfiguration(dependencies.create(stable.agp.get()))
+    .resolvedConfiguration.resolvedArtifacts.forEach { artifact ->
+      val id = artifact.moduleVersion.id
+      if (artifact.moduleVersion.id.group.startsWith("com.android")) return@forEach
       shared("${id.group}:${id.name}:${id.version}")
     }
-  }
 }
 
 tasks.withType<KotlinCompile>().configureEach {
@@ -77,7 +58,12 @@ tasks.withType<KotlinCompile>().configureEach {
 // Anchor task.
 val dumpSources by tasks.registering
 
-agpVersions.forEach { agpVersion ->
+// https://mvnrepository.com/artifact/com.android.tools.build/gradle
+listOf(
+  stable.agp,
+  alpha.agp,
+).forEach { agp ->
+  val agpVersion = requireNotNull(agp.get().version)
   // Create configuration for specific version of AGP.
   val agpConfiguration = configurations.create("agp$agpVersion") {
     // TODO: https://github.com/google/guava/issues/6801
@@ -92,7 +78,7 @@ agpVersions.forEach { agpVersion ->
 
   // Add that version of AGP as a dependency to this configuration.
   agpConfiguration.dependencies.add(
-    dependencies.create("com.android.tools.build:gradle:$agpVersion")
+    dependencies.create(agp.get())
   )
 
   // Create a task dedicated to extracting sources for that version.

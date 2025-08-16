@@ -23,4 +23,12 @@ dependencyResolutionManagement {
     }
     mavenCentral()
   }
+  versionCatalogs {
+    create("alpha") {
+      from(files("gradle/alpha.versions.toml"))
+    }
+    create("stable") {
+      from(files("gradle/stable.versions.toml"))
+    }
+  }
 }
