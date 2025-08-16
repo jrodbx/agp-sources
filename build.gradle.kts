@@ -4,12 +4,6 @@ plugins {
   kotlin("jvm") version embeddedKotlinVersion
 }
 
-/**
- * 1) Update AGP versions in gradle/xx.versions.toml
- * 2) Run './gradlew dumpSources'
- * 3) Check changeset into source control
- */
-
 // Match all directories that look like version numbers, e.g. 8.11.1, 8.13.0-alpha02.
 val versionDirPattern = """
   ^\d+\.\d+\.\d+(-alpha\d+)?$
