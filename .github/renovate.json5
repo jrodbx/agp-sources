@@ -18,6 +18,8 @@
       ],
       // Latest stable version.
       "allowedVersions": "/^[0-9]+\\.[0-9]+(\\.[0-9]+)?\$/",
+      "automerge": true,
+      "automergeStrategy": "rebase",
     },
     {
       "matchFileNames": [
@@ -25,6 +27,8 @@
       ],
       // Latest alpha version.
       "allowedVersions": "/.*-alpha.*/",
+      "automerge": true,
+      "automergeStrategy": "rebase",
     },
   ],
 }
