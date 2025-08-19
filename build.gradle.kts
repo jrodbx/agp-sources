@@ -4,6 +4,9 @@ plugins {
   kotlin("jvm") version embeddedKotlinVersion
 }
 
+val agpGroupPrefix = "com.android.tools"
+val kotlinGroup = "org.jetbrains.kotlin"
+
 // Match all directories that look like version numbers, e.g. 8.11.1, 8.13.0-alpha02.
 val versionDirPattern = """
   ^\d+\.\d+\.\d+(-alpha\d+)?$
@@ -27,12 +30,16 @@ configurations.configureEach {
   if (name != shared.name) {
     extendsFrom(shared.get())
   }
+  resolutionStrategy.eachDependency {
+    if (requested.group == kotlinGroup) {
+      useVersion(embeddedKotlinVersion)
+    }
+  }
 }
-
-val agpGroupPrefix = "com.android.tools"
 
 dependencies {
   shared(gradleApi())
+  shared(kotlin("gradle-plugin"))
 
   // Add all AGP dependencies but the AGP itself.
   configurations.detachedConfiguration(create(stable.agp.get()))
