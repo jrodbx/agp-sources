@@ -1,2 +1,2 @@
 [libraries]
-agp = "com.android.tools.build:gradle:8.12.1"
+agp = "com.android.tools.build:gradle:8.12.2"
