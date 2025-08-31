@@ -1,34 +1,31 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
   ],
-  "ignoreUnstable": false,
-  "packageRules": [
+  ignoreUnstable: false,
+  packageRules: [
     {
-      // Any other dependencies should be updated to the latest stable version.
-      "matchPackagePatterns": [
-        ".*",
+      allowedVersions: '/^[0-9]+\\.[0-9]+(\\.[0-9]+)?$/',
+      matchPackageNames: [
+        '/.*/',
       ],
-      "allowedVersions": "/^[0-9]+\\.[0-9]+(\\.[0-9]+)?\$/",
     },
     {
-      "matchFileNames": [
-        "gradle/stable.versions.toml",
+      matchFileNames: [
+        'gradle/stable.versions.toml',
       ],
-      // Latest stable version.
-      "allowedVersions": "/^[0-9]+\\.[0-9]+(\\.[0-9]+)?\$/",
-      "automerge": true,
-      "automergeStrategy": "rebase",
+      allowedVersions: '/^[0-9]+\\.[0-9]+(\\.[0-9]+)?$/',
+      automerge: true,
+      automergeStrategy: 'rebase',
     },
     {
-      "matchFileNames": [
-        "gradle/alpha.versions.toml",
+      matchFileNames: [
+        'gradle/alpha.versions.toml',
       ],
-      // Latest alpha version.
-      "allowedVersions": "/.*-alpha.*/",
-      "automerge": true,
-      "automergeStrategy": "rebase",
+      allowedVersions: '/.*-alpha.*/',
+      automerge: true,
+      automergeStrategy: 'rebase',
     },
   ],
 }
