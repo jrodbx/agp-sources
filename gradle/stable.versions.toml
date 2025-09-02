@@ -1,4 +1,4 @@
 # Dependencies in this file are automatically updated and merged according to the rules defined in `.github/renovate.json5`.
 
 [libraries]
-agp = "com.android.tools.build:gradle:8.12.2"
+agp = "com.android.tools.build:gradle:8.13.0"
