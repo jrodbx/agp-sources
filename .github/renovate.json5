@@ -10,6 +10,8 @@
       matchPackageNames: [
         '/.*/',
       ],
+      automerge: true,
+      automergeStrategy: 'rebase',
     },
     {
       matchFileNames: [
