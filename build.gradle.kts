@@ -7,9 +7,9 @@ plugins {
 val agpGroupPrefix = "com.android.tools"
 val kotlinGroup = "org.jetbrains.kotlin"
 
-// Match all directories that look like version numbers, e.g. 8.11.1, 8.13.0-alpha02.
+// Match all directories that look like version numbers, e.g. 8.11.1, 8.13.0-alpha02, 9.0.0-beta01.
 val versionDirPattern = """
-  ^\d+\.\d+\.\d+(-alpha\d+)?$
+  ^\d+\.\d+\.\d+(-(?:alpha|beta)\d+)?$
 """.trimIndent().toRegex()
 
 rootDir.listFiles().orEmpty()
@@ -58,6 +58,7 @@ val dumpSources by tasks.registering
 listOf(
   stable.agp,
   alpha.agp,
+  beta.agp,
 ).forEach { agp ->
   val agpVersion = requireNotNull(agp.get().version)
   // Create configuration for specific version of AGP.

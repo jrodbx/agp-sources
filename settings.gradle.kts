@@ -19,6 +19,9 @@ dependencyResolutionManagement {
     create("alpha") {
       from(files("gradle/alpha.versions.toml"))
     }
+    create("beta") {
+      from(files("gradle/beta.versions.toml"))
+    }
     create("stable") {
       from(files("gradle/stable.versions.toml"))
     }

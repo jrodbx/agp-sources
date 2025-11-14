@@ -19,6 +19,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
       - run: |
           rm -rf *-alpha* # Remove the last alpha version sources.
+          rm -rf *-beta* # Remove the last beta version sources.
           ./gradlew build dumpSources
       - uses: peter-evans/create-pull-request@v7
         # TODO: add `github.event.repository.fork == false` check back after https://github.com/jrodbx/agp-sources/pull/9 is merged.

@@ -29,5 +29,13 @@
       automerge: true,
       automergeStrategy: 'rebase',
     },
+    {
+      matchFileNames: [
+        'gradle/beta.versions.toml',
+      ],
+      allowedVersions: '/.*-beta.*/',
+      automerge: true,
+      automergeStrategy: 'rebase',
+    },
   ],
 }
