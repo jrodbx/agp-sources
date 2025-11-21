@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<xs:schema
+  xmlns:xs='http://www.w3.org/2001/XMLSchema'
+  targetNamespace='http://schemas.android.com/apk/config'
+  xmlns='http://schemas.android.com/apk/config'
+  elementFormDefault='qualified'>
+
+  <xs:simpleType name='NonEmptyString'>
+    <xs:restriction base='xs:string'>
+      <xs:minLength value='1' />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name='device-targeting-config'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='device-group' minOccurs='1' maxOccurs='unbounded'/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='device-group'>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref='device-selector' minOccurs='1' maxOccurs='unbounded'/>
+      </xs:sequence>
+      <xs:attribute name='name' type='NonEmptyString'/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='device-selector'>
+    <xs:complexType>
+      <xs:choice minOccurs='0' maxOccurs='unbounded'>
+        <xs:element ref='included-device-id' />
+        <xs:element ref='excluded-device-id' />
+        <xs:element ref='required-system-feature' />
+        <xs:element ref='forbidden-system-feature' />
+        <xs:element ref='system-on-chip' />
+      </xs:choice>
+      <xs:attribute name='ram-min-bytes' type='xs:nonNegativeInteger' default='0' />
+      <xs:attribute name='ram-max-bytes' type='xs:nonNegativeInteger' use='optional' />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='included-device-id'>
+    <xs:complexType>
+      <xs:attribute name='brand' type='NonEmptyString' use='required' />
+      <xs:attribute name='device' type='NonEmptyString' use='optional' />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='excluded-device-id'>
+    <xs:complexType>
+      <xs:attribute name='brand' type='NonEmptyString' use='required' />
+      <xs:attribute name='device' type='NonEmptyString' use='optional' />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='required-system-feature'>
+    <xs:complexType>
+      <xs:attribute name='name' type='NonEmptyString' use='required' />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='forbidden-system-feature'>
+    <xs:complexType>
+      <xs:attribute name='name' type='NonEmptyString' use='required' />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name='system-on-chip'>
+    <xs:complexType>
+      <xs:attribute name='manufacturer' type='NonEmptyString' use='required' />
+      <xs:attribute name='model' type='NonEmptyString' use='required' />
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
