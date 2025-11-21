@@ -8,9 +8,54 @@ import org.gradle.api.attributes.java.TargetJvmEnvironment
 
 // https://mvnrepository.com/artifact/com.android.tools.build/gradle
 def agpVersions = [
-    "8.9.2",
-    "8.10.0-rc02",
-    "8.11.0-alpha06",
+  "8.7.3",
+  "8.8.0-alpha01",
+  "8.8.0-alpha02",
+  "8.8.0-alpha03",
+  "8.8.0-alpha04",
+  "8.8.0-alpha05",
+  "8.8.0-alpha06",
+  "8.8.0-alpha07",
+  "8.8.0-alpha08",
+  "8.8.0-alpha09",
+  "8.8.0-beta01",
+  "8.8.0-rc01",
+  "8.8.0-rc02",
+  "8.8.0",
+  "8.8.1",
+  "8.8.2",
+  "8.9.0-alpha01",
+  "8.9.0-alpha02",
+  "8.9.0-alpha03",
+  "8.9.0-alpha04",
+  "8.9.0-alpha05",
+  "8.9.0-alpha06",
+  "8.9.0-alpha07",
+  "8.9.0-alpha08",
+  "8.9.0-alpha09",
+  "8.9.0-beta01",
+  "8.9.0-rc02",
+  "8.9.0-rc01",
+  "8.9.0",
+  "8.9.1",
+  "8.9.2",
+  "8.10.0-alpha01",
+  "8.10.0-alpha02",
+  "8.10.0-alpha03",
+  "8.10.0-alpha04",
+  "8.10.0-alpha05",
+  "8.10.0-alpha06",
+  "8.10.0-alpha07",
+  "8.10.0-alpha08",
+  "8.10.0-beta01",
+  "8.10.0-rc01",
+  "8.10.0-rc02",
+  "8.11.0-alpha01",
+  "8.11.0-alpha02",
+  "8.11.0-alpha03",
+  "8.11.0-alpha04",
+  "8.11.0-alpha05",
+  "8.11.0-alpha06",
 ]
 
 repositories {
@@ -33,8 +78,8 @@ agpVersions.forEach { agpVersion ->
   }
   configurations.add(agpConfiguration)
 
-	// add that version of AGP as a dependency to this configuration
-	agpConfiguration.dependencies.add(
+  // add that version of AGP as a dependency to this configuration
+  agpConfiguration.dependencies.add(
     dependencies.create("com.android.tools.build:gradle:${agpVersion}")
   )
 
@@ -76,5 +121,5 @@ agpVersions.forEach { agpVersion ->
   }
 
   // hook anchor task to all version-specific tasks
-	dumpSources.configure { it.dependsOn(agpDumpSources) }
+  dumpSources.configure { it.dependsOn(agpDumpSources) }
 }
