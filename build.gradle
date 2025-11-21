@@ -8,9 +8,9 @@ import org.gradle.api.attributes.java.TargetJvmEnvironment
 
 // https://mvnrepository.com/artifact/com.android.tools.build/gradle
 def agpVersions = [
-    "8.9.2",
-    "8.10.0-rc02",
-    "8.11.0-alpha06",
+    "8.13.1",
+    "9.0.0-beta02",
+    "9.0.0-alpha14",
 ]
 
 repositories {
