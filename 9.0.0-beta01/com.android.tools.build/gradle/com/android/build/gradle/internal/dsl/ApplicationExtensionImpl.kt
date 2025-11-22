@@ -1,0 +1,262 @@
+/*
+ * Copyright (C) 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.android.build.gradle.internal.dsl
+
+import com.android.build.api.dsl.ApkSigningConfig
+import com.android.build.api.dsl.ApplicationAndroidResources
+import com.android.build.api.dsl.ApplicationBuildFeatures
+import com.android.build.api.dsl.ApplicationBuildType
+import com.android.build.api.dsl.ApplicationDefaultConfig
+import com.android.build.api.dsl.ApplicationInstallation
+import com.android.build.api.dsl.ApplicationProductFlavor
+import com.android.build.api.dsl.ComposeOptions
+import com.android.build.api.dsl.Packaging
+import com.android.build.api.dsl.TestCoverage
+import com.android.build.api.dsl.ViewBinding
+import com.android.build.gradle.api.AndroidSourceSet
+import com.android.build.gradle.internal.coverage.JacocoOptions
+import com.android.build.gradle.internal.dsl.decorator.ApplicationInstallationImpl
+import com.android.build.gradle.internal.dsl.DefaultConfig as InternalDefaultConfig
+import com.android.build.gradle.internal.dsl.ProductFlavor as InternalProductFlavor
+
+import com.android.build.gradle.internal.plugins.DslContainerProvider
+import com.android.build.gradle.internal.services.DslServices
+import org.gradle.api.Action
+import org.gradle.api.NamedDomainObjectContainer
+import java.util.function.Supplier
+import javax.inject.Inject
+
+/** Internal implementation of the 'new' DSL interface */
+abstract class ApplicationExtensionImpl @Inject constructor(
+    dslServices: DslServices,
+    dslContainers: DslContainerProvider<
+            ApplicationDefaultConfig,
+            ApplicationBuildType,
+            ApplicationProductFlavor,
+            SigningConfig>
+) :
+    TestedExtensionImpl<
+            ApplicationBuildType,
+            ApplicationDefaultConfig,
+            ApplicationProductFlavor,
+            ApplicationInstallation>(
+        dslServices,
+        dslContainers
+    ),
+    InternalApplicationExtension {
+
+    override val buildFeatures: ApplicationBuildFeatures =
+        dslServices.newInstance(ApplicationBuildFeaturesImpl::class.java)
+
+
+    override fun buildFeatures(action: ApplicationBuildFeatures.() -> Unit) {
+        action(buildFeatures)
+    }
+
+    override fun buildFeatures(action: Action<ApplicationBuildFeatures>) {
+        action.execute(buildFeatures)
+    }
+
+    override fun buildTypes(action: NamedDomainObjectContainer<ApplicationBuildType>.() -> Unit) {
+        action(buildTypes)
+    }
+
+    override fun buildTypes(action: Action<in NamedDomainObjectContainer<BuildType>>) {
+        action.execute(buildTypes as NamedDomainObjectContainer<BuildType>)
+    }
+
+    override fun NamedDomainObjectContainer<ApplicationBuildType>.debug(action: ApplicationBuildType.() -> Unit) {
+        getByName("debug", action)
+    }
+
+    override fun NamedDomainObjectContainer<ApplicationBuildType>.release(action: ApplicationBuildType.() -> Unit)  {
+        getByName("release", action)
+    }
+
+    override val composeOptions: ComposeOptionsImpl =
+        dslServices.newInstance(ComposeOptionsImpl::class.java, dslServices)
+
+    override fun composeOptions(action: ComposeOptions.() -> Unit) {
+        action.invoke(composeOptions)
+    }
+
+    override fun composeOptions(action: Action<ComposeOptions>) {
+        action.execute(composeOptions)
+    }
+
+    override fun productFlavors(action: Action<NamedDomainObjectContainer<InternalProductFlavor>>) {
+        action.execute(productFlavors as NamedDomainObjectContainer<InternalProductFlavor>)
+    }
+
+    override fun productFlavors(action: NamedDomainObjectContainer<ApplicationProductFlavor>.() -> Unit) {
+        action.invoke(productFlavors)
+    }
+
+    override fun defaultConfig(action: Action<InternalDefaultConfig>) {
+        action.execute(defaultConfig as InternalDefaultConfig)
+    }
+
+    override fun defaultConfig(action: ApplicationDefaultConfig.() -> Unit) {
+        action.invoke(defaultConfig)
+    }
+
+    override fun signingConfigs(action: Action<NamedDomainObjectContainer<SigningConfig>>) {
+        action.execute(signingConfigs)
+    }
+
+    override fun signingConfigs(action: NamedDomainObjectContainer<out ApkSigningConfig>.() -> Unit) {
+        action.invoke(signingConfigs)
+    }
+
+    override val aaptOptions: AaptOptions get() = androidResources as AaptOptions
+
+    override fun aaptOptions(action: com.android.build.api.dsl.AaptOptions.() -> Unit) {
+        action.invoke(aaptOptions)
+    }
+
+    override fun aaptOptions(action: Action<AaptOptions>) {
+        action.execute(aaptOptions)
+    }
+
+    override val adbOptions: AdbOptions get() = installation as AdbOptions
+
+    override fun adbOptions(action: com.android.build.api.dsl.AdbOptions.() -> Unit) {
+        action.invoke(adbOptions)
+    }
+
+    override fun adbOptions(action: Action<AdbOptions>) {
+        action.execute(adbOptions)
+    }
+
+    override val androidResources: ApplicationAndroidResources =
+        dslServices.newDecoratedInstance(ApplicationAndroidResourcesImpl::class.java, dslServices)
+
+    override fun androidResources(action: ApplicationAndroidResources.() -> Unit) {
+        action(androidResources)
+    }
+
+    override fun androidResources(action: Action<ApplicationAndroidResources>) {
+        action.execute(androidResources)
+    }
+
+    override val dataBinding: DataBindingOptions =
+        dslServices.newDecoratedInstance(
+            DataBindingOptions::class.java,
+            Supplier { buildFeatures },
+            dslServices
+        )
+
+    override fun dataBinding(action: com.android.build.api.dsl.DataBinding.() -> Unit) {
+        action.invoke(dataBinding)
+    }
+
+    override fun dataBinding(action: Action<DataBindingOptions>) {
+        action.execute(dataBinding)
+    }
+
+    override val viewBinding: ViewBindingOptionsImpl
+        get() = dslServices.newDecoratedInstance(
+            ViewBindingOptionsImpl::class.java,
+            Supplier { buildFeatures },
+            dslServices
+        )
+
+    override fun viewBinding(action: Action<ViewBindingOptionsImpl>) {
+        action.execute(viewBinding)
+    }
+
+    override fun viewBinding(action: ViewBinding.() -> Unit) {
+        action.invoke(viewBinding)
+    }
+
+    override val jacoco: JacocoOptions
+        get() = testCoverage as JacocoOptions
+
+    override fun jacoco(action: com.android.build.api.dsl.JacocoOptions.() -> Unit) {
+        action.invoke(jacoco)
+    }
+
+    override fun jacoco(action: Action<JacocoOptions>) {
+        action.execute(jacoco)
+    }
+
+    override val testCoverage: TestCoverage  = dslServices.newInstance(JacocoOptions::class.java)
+
+    override fun testCoverage(action: TestCoverage.() -> Unit) {
+        action.invoke(testCoverage)
+    }
+
+    override fun testCoverage(action: Action<TestCoverage>) {
+        action.execute(testCoverage)
+    }
+
+    override val testOptions: TestOptions =
+        dslServices.newInstance(TestOptions::class.java, dslServices)
+
+    override fun testOptions(action: com.android.build.api.dsl.TestOptions.() -> Unit) {
+        action.invoke(testOptions)
+    }
+
+    override fun testOptions(action: Action<TestOptions>) {
+        action.execute(testOptions)
+    }
+
+    override val sourceSets: NamedDomainObjectContainer<AndroidSourceSet>
+        get() = sourceSetManager.sourceSetsContainer
+
+    override fun sourceSets(action: NamedDomainObjectContainer<out com.android.build.api.dsl.AndroidSourceSet>.() -> Unit) {
+        sourceSetManager.executeAction(action)
+    }
+
+    override fun sourceSets(action: Action<NamedDomainObjectContainer<AndroidSourceSet>>) {
+        action.execute(sourceSets)
+    }
+
+    final override val lintOptions: LintOptions by lazy(LazyThreadSafetyMode.PUBLICATION) {
+        dslServices.newInstance(LintOptions::class.java, dslServices, lint)
+    }
+
+    override fun lintOptions(action: com.android.build.api.dsl.LintOptions.() -> Unit) {
+        action.invoke(lintOptions)
+    }
+
+    override fun lintOptions(action: Action<LintOptions>) {
+        action.execute(lintOptions)
+    }
+
+    override val installation: ApplicationInstallation =
+        dslServices.newDecoratedInstance(ApplicationInstallationImpl::class.java, dslServices)
+
+    override fun installation(action: ApplicationInstallation.() -> Unit) {
+        action(installation)
+    }
+
+    override fun installation(action: Action<ApplicationInstallation>) {
+        action.execute(installation)
+    }
+
+    override val packagingOptions: PackagingOptions
+        get() = packaging as PackagingOptions
+
+    override fun packagingOptions(action: Packaging.() -> Unit) {
+        action.invoke(packaging)
+    }
+
+    override fun packagingOptions(action: Action<PackagingOptions>) {
+        action.execute(packaging as PackagingOptions)
+    }
+}
