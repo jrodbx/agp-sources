@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Status Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="app-header">
+    <div class="container">
+      <div class="header-content">
+        <div>
+          <h1 class="app-title">Test Report</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="report-view" class="container">
+    <main class="main-content">
+      <div class="summary-grid">
+        <div class="summary-card card-blue">
+          <div class="card-content">
+            <div class="flex-1">
+              <p class="card-label">Total Tests</p>
+              <p class="card-value" id="total-tests"></p>
+            </div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="summary-card card-green">
+          <div class="card-content">
+            <div class="flex-1">
+              <p class="card-label">Passed</p>
+              <p class="card-value" id="total-passed"></p>
+            </div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="summary-card card-red" id="failed-card">
+          <div class="card-content">
+            <div class="flex-1">
+              <p class="card-label">Failed</p>
+              <p class="card-value" id="total-failed"></p>
+            </div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="summary-card card-yellow">
+          <div class="card-content">
+            <div class="flex-1">
+              <p class="card-label">Skipped</p>
+              <p class="card-value" id="total-skipped"></p>
+            </div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-section">
+        <div class="controls-group">
+          <div class="select-wrapper">
+            <select id="view-mode-select" class="form-select">
+              <option value="tree" selected>Tree View</option>
+              <option value="flat">Flat View</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <div class="custom-select" id="variant-multiselect">
+              <button class="select-button" id="variant-select-btn">All Variants</button>
+              <div class="select-dropdown hidden" id="variant-dropdown-content">
+              </div>
+            </div>
+          </div>
+          <div class="select-wrapper">
+            <select id="status-filter-select" class="form-select">
+              <option value="all" selected>All Statuses</option>
+              <option value="passed">Passed</option>
+              <option value="failed">Failed</option>
+            </select>
+          </div>
+        </div>
+        <input type="text" id="search-input" placeholder="Search by name..." class="search-input">
+      </div>
+      <div id="breadcrumbs" class="breadcrumbs"></div>
+
+      <div id="view-toggles" class="view-toggles">
+        <div id="flat-view-controls" class="toggle-group">
+          <button data-view="modules" class="tab-button view-toggle">Modules</button>
+          <button data-view="testSuites" class="tab-button view-toggle">Test Suites</button>
+          <button data-view="packages" class="tab-button view-toggle">Packages</button>
+          <button data-view="classes" class="tab-button view-toggle">Classes</button>
+          <button data-view="functions" class="tab-button view-toggle">Functions</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <div class="table-scroll">
+          <table>
+            <thead id="table-headers" class="table-header">
+            </thead>
+            <tbody id="results-data">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="stack-trace-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">StackTrace</h3>
+        <button id="close-modal" class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <pre id="stack-trace-content"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
