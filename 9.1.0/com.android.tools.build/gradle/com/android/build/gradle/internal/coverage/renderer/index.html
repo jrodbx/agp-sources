@@ -1,0 +1,191 @@
+<!--
+ Copyright (C) 2025 The Android Open Source Project
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coverage Report</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-top-row">
+        <div class="header-content">
+            <div>
+                <h1 class="header-title">Project</h1>
+                <p class="header-date"></p>
+            </div>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="stat-label">MODULES</span>
+                    <span class="stat-value" id="total-modules">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">CLASSES</span>
+                    <span class="stat-value" id="total-classes">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">TEST SUITES</span>
+                    <span class="stat-value" id="total-tests">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-toolbar">
+        <div id="report-view-controls" class="filter-controls">
+            <div class="btn-group">
+                <div class="relative">
+                    <button id="module-filter-btn" class="dropdown-btn">
+                        <span class="font-medium text-gray-600">Module:</span>
+                        <span id="module-filter-text">All</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="module-filter-dropdown" class="dropdown-menu hidden">
+                        <div id="module-filter-list" class="p-1 space-y-1"></div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button id="testsuite-filter-btn" class="dropdown-btn">
+                        <span class="font-medium text-gray-600">Test Suite:</span>
+                        <span id="testsuite-filter-text">All</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="testsuite-filter-dropdown" class="dropdown-menu hidden">
+                        <div id="testsuite-filter-list" class="p-1 space-y-1"></div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button id="package-filter-btn" class="dropdown-btn">
+                        <span class="font-medium text-gray-600">Package:</span>
+                        <span id="package-filter-text">All</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="package-filter-dropdown" class="dropdown-menu hidden">
+                        <div id="package-filter-list" class="p-1 space-y-1"></div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button id="class-filter-btn" class="dropdown-btn">
+                        <span class="font-medium text-gray-600">Class:</span>
+                        <span id="class-filter-text">All</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="class-filter-dropdown" class="dropdown-menu hidden">
+                        <div id="class-filter-list" class="p-1 space-y-1"></div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button id="variant-filter-btn" class="dropdown-btn">
+                        <span class="font-medium text-gray-600">Variants:</span>
+                        <span id="variant-filter-text">All</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="variant-filter-dropdown" class="dropdown-menu hidden">
+                        <div id="variant-filter-list" class="p-1 space-y-1"></div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button id="view-mode-btn" class="dropdown-btn">
+                        <span class="font-medium text-gray-600">View:</span>
+                        <span id="view-mode-text">Flat</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="view-mode-dropdown" class="dropdown-menu hidden">
+                        <div id="view-mode-list" class="p-1 space-y-1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search report..." class="search-input">
+                <button id="search-clear-btn" class="search-clear-btn hidden" aria-label="Clear search">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="source-view-controls" class="filter-controls hidden">
+            <div class="btn-group">
+                <div class="relative">
+                    <button id="source-variant-filter-btn" class="dropdown-btn">
+                        <span class="font-medium text-gray-600">Variants:</span>
+                        <span id="source-variant-filter-text">All</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div id="source-variant-filters-dropdown" class="dropdown-menu hidden">
+                        <div id="source-variant-filters" class="p-2 space-y-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="function-search" placeholder="Search methods..." class="search-input">
+                <button id="function-search-clear-btn" class="search-clear-btn hidden" aria-label="Clear search">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="report-view" class="container-custom">
+    <main>
+        <div id="flat-breadcrumbs" class="flex items-center gap-2 text-sm text-gray-500 mb-4" style="min-height: 28px;">
+        </div>
+        <div id="view-toggles" class="view-toggles">
+            <div id="flat-view-controls" class="flex items-center gap-4">
+                <button data-view="modules" class="tab-button view-toggle">Modules</button>
+                <button data-view="packages" class="tab-button view-toggle">Packages</button>
+                <button data-view="classes" class="tab-button view-toggle">Classes</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead id="table-headers">
+                </thead>
+                <tbody id="coverage-data">
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<div id="source-view" style="display: none;" class="container-custom">
+    <main>
+        <div id="source-breadcrumbs" class="flex items-center gap-2 text-sm text-gray-500" style="min-height: 28px;">
+        </div>
+
+        <div class="source-grid">
+            <div class="func-list-container">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Functions</h3>
+                <div id="function-list" class="space-y-2 py-4"></div>
+            </div>
+            <div id="source-view-container" class="source-view-container"></div>
+        </div>
+    </main>
+</div>
+
+<script src="data/report-data.js"></script>
+<script src="javascript/codecoveragescript.js"></script>
+<script src="javascript/sourceviewscript.js"></script>
+</body>
+</html>

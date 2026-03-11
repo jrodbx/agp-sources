@@ -1,0 +1,50 @@
+/*
+ * Copyright (C) 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.android.build.gradle.internal.core.dsl.impl
+
+import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryExtension
+import com.android.build.api.variant.impl.MutableAndroidVersion
+import com.android.build.gradle.internal.core.dsl.KmpComponentDslInfo
+import com.android.build.gradle.internal.dsl.DependencySelectionImpl
+import com.android.build.gradle.internal.dsl.KotlinMultiplatformAndroidLibraryExtensionImpl
+import com.android.build.gradle.internal.services.VariantServices
+import com.android.builder.core.AbstractProductFlavor
+import org.gradle.api.provider.Property
+
+abstract class KmpComponentDslInfoImpl(
+  protected val extension: KotlinMultiplatformAndroidLibraryExtension,
+  protected val services: VariantServices,
+  override val withJava: Boolean,
+) : KmpComponentDslInfo {
+
+  override val minSdkVersion: MutableAndroidVersion
+    get() = (extension as KotlinMultiplatformAndroidLibraryExtensionImpl).minSdkVersion
+
+  override val applicationId: Property<String> by lazy { services.newPropertyBackingDeprecatedApi(String::class.java, namespace) }
+
+  override val missingDimensionStrategies: Map<String, AbstractProductFlavor.DimensionRequest>
+    get() =
+      (extension.localDependencySelection as DependencySelectionImpl).getDimensions().mapValues {
+        AbstractProductFlavor.DimensionRequest(requested = it.key, fallbacks = it.value.toList())
+      }
+
+  override val buildTypeMatchingFallbacks: List<String>
+    get() = extension.localDependencySelection.selectBuildTypeFrom.get()
+
+  // For KMP, Kotlin is always enabled
+  override val enableKotlin: Boolean = true
+}

@@ -1,0 +1,74 @@
+/*
+ * Copyright (C) 2020 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.android.build.api.dsl
+
+import org.gradle.api.Incubating
+import org.gradle.api.file.DirectoryProperty
+import org.gradle.api.file.RegularFileProperty
+import org.gradle.declarative.dsl.model.annotations.Restricted
+
+/**
+ * DSL object for configuring the Android Application Bundle
+ *
+ * This is accessed via [ApplicationExtension.bundle]
+ */
+interface Bundle {
+
+  val abi: BundleAbi
+
+  val density: BundleDensity
+
+  val language: BundleLanguage
+
+  val texture: BundleTexture
+
+  @get:Incubating @Deprecated("Use deviceGroup instead") val deviceTier: BundleDeviceTier
+
+  @get:Incubating val deviceGroup: BundleDeviceGroup
+
+  @get:Incubating val codeTransparency: BundleCodeTransparency
+
+  val storeArchive: BundleStoreArchive
+
+  @get:Incubating @get:Restricted val integrityConfigDir: DirectoryProperty
+
+  @get:Incubating val countrySet: BundleCountrySet
+
+  @get:Incubating val aiModelVersion: BundleAiModelVersion
+
+  @get:Incubating @get:Restricted val deviceTargetingConfig: RegularFileProperty
+
+  fun abi(action: BundleAbi.() -> Unit)
+
+  fun density(action: BundleDensity.() -> Unit)
+
+  fun language(action: BundleLanguage.() -> Unit)
+
+  fun texture(action: BundleTexture.() -> Unit)
+
+  @Incubating @Deprecated("Use deviceGroup instead") fun deviceTier(action: BundleDeviceTier.() -> Unit)
+
+  @Incubating fun deviceGroup(action: BundleDeviceGroup.() -> Unit)
+
+  @Incubating fun codeTransparency(action: BundleCodeTransparency.() -> Unit)
+
+  fun storeArchive(action: BundleStoreArchive.() -> Unit)
+
+  @Incubating fun countrySet(action: BundleCountrySet.() -> Unit)
+
+  @Incubating fun aiModelVersion(action: BundleAiModelVersion.() -> Unit)
+}
